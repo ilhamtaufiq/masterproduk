@@ -92,7 +92,7 @@ def parse_pdf(file_path, source_key):
     return records
 
 def main():
-    pdf_dir = "/home/ams/Documents/master_produk"
+    pdf_dir = os.path.dirname(os.path.abspath(__file__))
     pdf_files = {
         "MASTER PRODUCT SE 47 2026 - BM 2025.pdf": "Bina Marga (BM)",
         "MASTER PRODUCT SE 47 2026 - CK.pdf": "Cipta Karya (CK)",

@@ -15,7 +15,8 @@ app = FastAPI(
     version="1.0.0"
 )
 
-DB_PATH = "/home/ams/Documents/master_produk/master_produk.db"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "master_produk.db")
 
 # Ensure the database exists
 def get_db_connection():
@@ -290,7 +291,7 @@ def bulk_search(request: BulkSearchRequest):
 # Serve Frontend SPA
 @app.get("/")
 def read_root():
-    return FileResponse("/home/ams/Documents/master_produk/static/index.html")
+    return FileResponse(os.path.join(BASE_DIR, "static", "index.html"))
 
 # Serve the static files directory
-app.mount("/static", StaticFiles(directory="/home/ams/Documents/master_produk/static"), name="static")
+app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
