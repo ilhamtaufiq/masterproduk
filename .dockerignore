@@ -1,0 +1,27 @@
+# Ignore local virtual environment
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local PDF files (not needed for runtime since DB is pre-populated)
+*.pdf
+
+# Ignore backup JSON caches or test scripts
+*.json
+scratch/
+test_*.py
+inspect_*.py
+inspect_details.py
+inspect_pdf.py
+inspect_all.py
+
+# Ignore git repository settings
+.git/
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+README.md

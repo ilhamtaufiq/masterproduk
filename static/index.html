@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Master Data Produk - SE DJBK 47/2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation / Logo / Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>MasterProduk</h1>
+                    <span>SE DJBK 47 TAHUN 2026</span>
+                </div>
+            </div>
+            
+            <div class="theme-toggle-container">
+                <button id="themeToggleBtn" title="Ganti Tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Panel -->
+        <main class="app-main">
+            <!-- Top Hero Banner / Description -->
+            <section class="hero-banner">
+                <h2>Cari & Kelola Master Data Pekerjaan</h2>
+                <p>Akses cepat data spesifikasi teknis, satuan, kode produk, dan ruang lingkup kegiatan PUPR (Bina Marga, Cipta Karya, Sumber Daya Air, SMKK, dan Umum) secara instan.</p>
+            </section>
+
+            <!-- Search and Filter Control Center -->
+            <section class="control-center">
+                <div class="search-bar-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="globalSearchInput" placeholder="Masukkan kata kunci pencarian (misal: 'pagar', 'tanah', 'U.1.1')..." autocomplete="off">
+                    <button id="clearSearchBtn" class="clear-btn" style="display: none;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div class="filters-row">
+                    <!-- Source Selection Dropdown -->
+                    <div class="filter-group">
+                        <label for="sourceFilter"><i class="fa-solid fa-folder-open"></i> Bidang/Sumber</label>
+                        <select id="sourceFilter">
+                            <option value="">Semua Bidang</option>
+                            <!-- Dynamic options -->
+                        </select>
+                    </div>
+
+                    <!-- Category 1 Dropdown -->
+                    <div class="filter-group">
+                        <label for="categoryFilter"><i class="fa-solid fa-tags"></i> Kategori Utama</label>
+                        <select id="categoryFilter">
+                            <option value="">Semua Kategori</option>
+                            <!-- Dynamic options -->
+                        </select>
+                    </div>
+
+                    <!-- Export and Refresh Actions -->
+                    <div class="action-buttons-group">
+                        <button id="bulkSearchModalBtn" class="btn btn-primary" title="Cari massal beberapa item sekaligus dari clipboard">
+                            <i class="fa-solid fa-paste"></i> Cari Massal
+                        </button>
+                        <button id="exportCsvBtn" class="btn btn-secondary" title="Ekspor data hasil pencarian saat ini ke file CSV">
+                            <i class="fa-solid fa-file-excel"></i> Ekspor CSV
+                        </button>
+                        <button id="resetFiltersBtn" class="btn btn-tertiary" title="Reset Semua Filter">
+                            <i class="fa-solid fa-rotate-left"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats and Controls summary -->
+            <section class="summary-section">
+                <div class="results-count">
+                    Menampilkan <strong id="displayedCount">0</strong> dari <strong id="totalCount">0</strong> data master produk
+                </div>
+                <div class="results-per-page">
+                    <label for="limitSelect">Baris per halaman:</label>
+                    <select id="limitSelect">
+                        <option value="25">25</option>
+                        <option value="50" selected>50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Data Table Container -->
+            <section class="table-container">
+                <div class="table-wrapper">
+                    <table id="productsTable">
+                        <thead>
+                            <tr>
+                                <th class="col-num">No</th>
+                                <th class="col-source">Bidang</th>
+                                <th class="col-cat">Kategori</th>
+                                <th class="col-desc">Nama Item / Produk Tayang</th>
+                                <th class="col-unit">Satuan</th>
+                                <th class="col-code">Kode Produk</th>
+                                <th class="col-actions">Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <tr>
+                                <td colspan="7" class="loading-state">
+                                    <div class="spinner"></div>
+                                    <p>Memuat data...</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <h3>Data tidak ditemukan</h3>
+                    <p>Coba gunakan kata kunci lain atau ubah filter bidang/kategori utama Anda.</p>
+                </div>
+            </section>
+
+            <!-- Pagination Control Panel -->
+            <footer class="pagination-footer">
+                <div class="pagination-info">
+                    Halaman <span id="currentPage">1</span> dari <span id="totalPages">1</span>
+                </div>
+                <div class="pagination-buttons">
+                    <button id="prevPageBtn" class="btn-page" disabled><i class="fa-solid fa-chevron-left"></i> Sebelumnya</button>
+                    <div id="pageNumbersContainer" class="page-numbers">
+                        <!-- Dynamic page list -->
+                    </div>
+                    <button id="nextPageBtn" class="btn-page" disabled>Berikutnya <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Detail Drawer / Slide-out Panel (Premium UX Element) -->
+        <aside id="detailDrawer" class="detail-drawer">
+            <div class="drawer-overlay" id="drawerOverlay"></div>
+            <div class="drawer-content">
+                <header class="drawer-header">
+                    <h3><i class="fa-solid fa-circle-info"></i> Detail Item Pekerjaan</h3>
+                    <button id="closeDrawerBtn" class="close-drawer-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <div class="drawer-body" id="drawerBody">
+                    <!-- Dynamic details go here -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Bulk Search Modal (Premium overlay UI) -->
+        <div id="bulkSearchModal" class="modal">
+            <div class="modal-overlay" id="bulkModalOverlay"></div>
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h3><i class="fa-solid fa-copy"></i> Pencarian Massal (Bulk Search)</h3>
+                    <button id="closeBulkModalBtn" class="close-modal-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+                <div class="modal-body">
+                    <p class="modal-intro">Tempelkan (Paste) daftar item pekerjaan beserta kodenya langsung dari clipboard Anda di bawah ini:</p>
+                    <textarea id="bulkPasteTextarea" placeholder="Tempel teks di sini...&#10;Contoh:&#10;PEKERJAAN TANAH&#10;1 m2 Pembersihan dan pengupasan permukaan tanah s.d. tanaman Ø 2 cm   A.1.01.a.1&#10;Rompi Keselamatan (Safety Vest)   komp.3.y" rows="8"></textarea>
+                    
+                    <div class="modal-actions-row">
+                        <button id="processBulkBtn" class="btn btn-secondary">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Analisis & Cocokkan Data
+                        </button>
+                        <button id="clearBulkTextBtn" class="btn btn-tertiary">
+                            <i class="fa-solid fa-trash-can"></i> Bersihkan
+                        </button>
+                    </div>
+
+                    <!-- Result Section -->
+                    <div id="bulkResultSection" style="display: none; margin-top: 1.5rem;">
+                        <hr class="modal-separator">
+                        <div class="bulk-result-header">
+                            <h4>Hasil Analisis Kecocokan Data</h4>
+                            <button id="exportBulkCsvBtn" class="btn btn-tertiary btn-small" title="Ekspor hasil analisis ke CSV">
+                                <i class="fa-solid fa-file-csv"></i> Ekspor Hasil
+                            </button>
+                        </div>
+                        <div class="bulk-results-wrapper">
+                            <table class="bulk-results-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 35%;">Baris Input</th>
+                                        <th style="width: 15%;">Kode Terdeteksi</th>
+                                        <th style="width: 40%;">Kecocokan Master Data</th>
+                                        <th style="width: 10%; text-align: center;">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bulkResultsTableBody">
+                                    <!-- Dynamic rows go here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification system -->
+    <div id="toastNotification" class="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Teks berhasil disalin!</span>
+    </div>
+
+    <!-- Custom Logic Script -->
+    <script src="/static/app.js"></script>
+</body>
+</html>

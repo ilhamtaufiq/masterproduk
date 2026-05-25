@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  master-produk-search:
+    build: .
+    container_name: master_produk_app
+    ports:
+      - "8000:8000"
+    restart: always
+    volumes:
+      # Opsional: mount database secara eksternal jika ingin database terupdate di host
+      - ./master_produk.db:/app/master_produk.db
