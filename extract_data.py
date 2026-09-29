@@ -92,7 +92,9 @@ def parse_pdf(file_path, source_key):
     return records
 
 def main():
-    pdf_dir = os.path.dirname(os.path.abspath(__file__))
+    # ponytail: hardcoded source path; make configurable via CLI arg when needed
+    pdf_dir = r"C:\Users\asusg\Documents\master produk 2026\Usulan 3_SE Dirjen Binkon 47 th 2026 (spek terbaru)"
+    out_dir = os.path.dirname(os.path.abspath(__file__))
     pdf_files = {
         "MASTER PRODUCT SE 47 2026 - BM 2025.pdf": "Bina Marga (BM)",
         "MASTER PRODUCT SE 47 2026 - CK.pdf": "Cipta Karya (CK)",
@@ -117,7 +119,7 @@ def main():
     print(f"\nTotal records extracted: {len(all_records)}")
     
     # Save to SQLite database
-    db_path = os.path.join(pdf_dir, "master_produk.db")
+    db_path = os.path.join(out_dir, "master_produk.db")
     print(f"Saving records to SQLite database: {db_path}...")
     
     conn = sqlite3.connect(db_path)
@@ -157,7 +159,7 @@ def main():
     conn.close()
     
     # Save to JSON file as a cache
-    json_path = os.path.join(pdf_dir, "master_produk.json")
+    json_path = os.path.join(out_dir, "master_produk.json")
     print(f"Saving cache to JSON file: {json_path}...")
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(all_records, f, indent=2, ensure_ascii=False)

@@ -1,5 +1,6 @@
 // State Management
 const state = {
+    mode: 'produk', // 'produk' or 'ssh'
     searchQuery: '',
     sourceFilter: '',
     categoryFilter: '',
@@ -14,12 +15,18 @@ const state = {
 
 // DOM Elements
 const DOM = {
+    tabMasterProduk: document.getElementById('tabMasterProduk'),
+    tabSshBupati: document.getElementById('tabSshBupati'),
+    heroTitle: document.getElementById('heroTitle'),
+    heroDesc: document.getElementById('heroDesc'),
+
     globalSearchInput: document.getElementById('globalSearchInput'),
     clearSearchBtn: document.getElementById('clearSearchBtn'),
     sourceFilter: document.getElementById('sourceFilter'),
     categoryFilter: document.getElementById('categoryFilter'),
     exportCsvBtn: document.getElementById('exportCsvBtn'),
     resetFiltersBtn: document.getElementById('resetFiltersBtn'),
+    productsTable: document.getElementById('productsTable'),
     productsTableBody: document.getElementById('productsTableBody'),
     emptyState: document.getElementById('emptyState'),
     displayedCount: document.getElementById('displayedCount'),
@@ -37,7 +44,7 @@ const DOM = {
     themeToggleBtn: document.getElementById('themeToggleBtn'),
     toastNotification: document.getElementById('toastNotification'),
     toastMessage: document.getElementById('toastMessage'),
-    
+
     // Bulk Search elements
     bulkSearchModalBtn: document.getElementById('bulkSearchModalBtn'),
     bulkSearchModal: document.getElementById('bulkSearchModal'),
@@ -60,22 +67,25 @@ async function init() {
     initTheme();
     await fetchSources();
     await fetchCategories();
-    await fetchProducts();
+    await fetchData();
 }
 
 // Set up Event Listeners
 function setupEventListeners() {
+    // Mode Switcher Tabs
+    DOM.tabMasterProduk.addEventListener('click', () => switchMode('produk'));
+    DOM.tabSshBupati.addEventListener('click', () => switchMode('ssh'));
+
     // Search input with debouncing
     DOM.globalSearchInput.addEventListener('input', (e) => {
         state.searchQuery = e.target.value;
         state.offset = 0;
         state.currentPage = 1;
-        
-        // Show/hide clear button
+
         DOM.clearSearchBtn.style.display = state.searchQuery ? 'block' : 'none';
-        
+
         clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(fetchProducts, 300);
+        debounceTimer = setTimeout(fetchData, 300);
     });
 
     // Clear search button
@@ -85,19 +95,18 @@ function setupEventListeners() {
         state.offset = 0;
         state.currentPage = 1;
         DOM.clearSearchBtn.style.display = 'none';
-        fetchProducts();
+        fetchData();
     });
 
     // Source Filter Change
     DOM.sourceFilter.addEventListener('change', async (e) => {
         state.sourceFilter = e.target.value;
-        state.categoryFilter = ''; // Reset category filter
+        state.categoryFilter = '';
         state.offset = 0;
         state.currentPage = 1;
-        
-        // Re-fetch categories to filter by source
+
         await fetchCategories();
-        await fetchProducts();
+        await fetchData();
     });
 
     // Category Filter Change
@@ -105,7 +114,7 @@ function setupEventListeners() {
         state.categoryFilter = e.target.value;
         state.offset = 0;
         state.currentPage = 1;
-        fetchProducts();
+        fetchData();
     });
 
     // Rows limit select change
@@ -113,7 +122,7 @@ function setupEventListeners() {
         state.limit = parseInt(e.target.value);
         state.offset = 0;
         state.currentPage = 1;
-        fetchProducts();
+        fetchData();
     });
 
     // Pagination buttons
@@ -121,7 +130,8 @@ function setupEventListeners() {
         if (state.currentPage > 1) {
             state.currentPage--;
             state.offset = (state.currentPage - 1) * state.limit;
-            fetchProducts();
+            fetchData();
+            scrollToTable();
         }
     });
 
@@ -129,7 +139,8 @@ function setupEventListeners() {
         if (state.currentPage < state.totalPages) {
             state.currentPage++;
             state.offset = (state.currentPage - 1) * state.limit;
-            fetchProducts();
+            fetchData();
+            scrollToTable();
         }
     });
 
@@ -145,23 +156,27 @@ function setupEventListeners() {
         state.offset = 0;
         state.currentPage = 1;
         fetchCategories();
-        fetchProducts();
+        fetchData();
     });
 
     // Export CSV
     DOM.exportCsvBtn.addEventListener('click', () => {
         const queryParams = new URLSearchParams();
         if (state.searchQuery) queryParams.append('q', state.searchQuery);
-        if (state.sourceFilter) queryParams.append('source', state.sourceFilter);
         if (state.categoryFilter) queryParams.append('category', state.categoryFilter);
-        
-        window.location.href = `/api/export?${queryParams.toString()}`;
+
+        if (state.mode === 'ssh') {
+            window.location.href = `/api/ssh/export?${queryParams.toString()}`;
+        } else {
+            if (state.sourceFilter) queryParams.append('source', state.sourceFilter);
+            window.location.href = `/api/export?${queryParams.toString()}`;
+        }
     });
 
     // Drawer closing
     DOM.closeDrawerBtn.addEventListener('click', closeDrawer);
     DOM.drawerOverlay.addEventListener('click', closeDrawer);
-    
+
     // Theme toggle button
     DOM.themeToggleBtn.addEventListener('click', toggleTheme);
 
@@ -187,6 +202,81 @@ function setupEventListeners() {
 
     // Export Bulk CSV
     DOM.exportBulkCsvBtn.addEventListener('click', exportBulkResultsCsv);
+
+    // Global Keyboard Shortcuts (/ to search, Esc to close modals/drawers)
+    window.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== DOM.globalSearchInput && document.activeElement !== DOM.bulkPasteTextarea) {
+            e.preventDefault();
+            DOM.globalSearchInput.focus();
+            DOM.globalSearchInput.select();
+        } else if (e.key === 'Escape') {
+            closeDrawer();
+            closeBulkModal();
+        }
+    });
+}
+
+// Switch between Master Data Produk and SSH Bupati
+async function switchMode(mode) {
+    if (state.mode === mode) return;
+    state.mode = mode;
+    state.searchQuery = '';
+    state.sourceFilter = '';
+    state.categoryFilter = '';
+    state.offset = 0;
+    state.currentPage = 1;
+
+    DOM.globalSearchInput.value = '';
+    DOM.clearSearchBtn.style.display = 'none';
+
+    if (mode === 'ssh') {
+        DOM.tabMasterProduk.classList.remove('active');
+        DOM.tabSshBupati.classList.add('active');
+        DOM.heroTitle.textContent = 'Cari & Kelola Harga Standar Bupati (Perbup 55/2025)';
+        DOM.heroDesc.textContent = 'Akses cepat data Standar Satuan Harga (SSH) Kabupaten Cianjur Tahun Anggaran 2026 berdasarkan Peraturan Bupati No. 55 Tahun 2025.';
+
+        DOM.sourceFilter.parentElement.style.display = 'none';
+    } else {
+        DOM.tabSshBupati.classList.remove('active');
+        DOM.tabMasterProduk.classList.add('active');
+        DOM.heroTitle.textContent = 'Cari & Kelola Master Data Pekerjaan';
+        DOM.heroDesc.textContent = 'Akses cepat data spesifikasi teknis, satuan, kode produk, dan ruang lingkup kegiatan PUPR (Bina Marga, Cipta Karya, Sumber Daya Air, SMKK, dan Umum) secara instan.';
+
+        DOM.sourceFilter.parentElement.style.display = 'flex';
+    }
+
+    updateTableHeader();
+    await fetchCategories();
+    await fetchData();
+}
+
+function updateTableHeader() {
+    const thead = DOM.productsTable.querySelector('thead');
+    if (state.mode === 'ssh') {
+        thead.innerHTML = `
+            <tr>
+                <th class="col-num">No</th>
+                <th class="col-cat">Kategori</th>
+                <th class="col-desc">Uraian Barang & Spesifikasi</th>
+                <th class="col-unit" style="text-align: center;">Satuan</th>
+                <th class="col-price" style="text-align: right;">Harga Satuan (Rp)</th>
+                <th class="col-code">Kode Kelompok</th>
+                <th class="col-actions">Detail</th>
+            </tr>
+        `;
+    } else {
+        thead.innerHTML = `
+            <tr>
+                <th class="col-num">No</th>
+                <th class="col-source">Bidang</th>
+                <th class="col-cat">Kategori</th>
+                <th class="col-desc">Nama Item / Produk Tayang</th>
+                <th class="col-unit">Satuan</th>
+                <th class="col-code">Kode Produk</th>
+                <th class="col-actions">Detail</th>
+            </tr>
+        `;
+    }
 }
 
 // Init theme from localStorage
@@ -219,8 +309,7 @@ async function fetchSources() {
     try {
         const res = await fetch('/api/sources');
         const data = await res.json();
-        
-        // Populate select
+
         DOM.sourceFilter.innerHTML = '<option value="">Semua Bidang</option>';
         data.sources.forEach(src => {
             const opt = document.createElement('option');
@@ -236,16 +325,20 @@ async function fetchSources() {
 // Fetch and populate list of categories
 async function fetchCategories() {
     try {
-        const url = state.sourceFilter 
-            ? `/api/categories?source=${encodeURIComponent(state.sourceFilter)}`
-            : '/api/categories';
-            
+        let url;
+        if (state.mode === 'ssh') {
+            url = '/api/ssh/categories';
+        } else {
+            url = state.sourceFilter
+                ? `/api/categories?source=${encodeURIComponent(state.sourceFilter)}`
+                : '/api/categories';
+        }
+
         const res = await fetch(url);
         const data = await res.json();
-        
-        // Keep selection if it still exists
+
         const oldVal = state.categoryFilter;
-        
+
         DOM.categoryFilter.innerHTML = '<option value="">Semua Kategori Utama</option>';
         data.categories.forEach(cat => {
             const opt = document.createElement('option');
@@ -253,7 +346,7 @@ async function fetchCategories() {
             opt.textContent = cat;
             DOM.categoryFilter.appendChild(opt);
         });
-        
+
         if (data.categories.includes(oldVal)) {
             DOM.categoryFilter.value = oldVal;
             state.categoryFilter = oldVal;
@@ -265,17 +358,36 @@ async function fetchCategories() {
     }
 }
 
+// Main fetch dispatcher based on state.mode
+async function fetchData() {
+    if (state.mode === 'ssh') {
+        await fetchSsh();
+    } else {
+        await fetchProducts();
+    }
+}
+
+function renderSkeletonRows() {
+    let rowsHtml = '';
+    for (let i = 0; i < 5; i++) {
+        rowsHtml += `
+            <tr class="skeleton-row">
+                <td><div class="skeleton-bar" style="width: 24px;"></div></td>
+                <td><div class="skeleton-bar" style="width: 80px;"></div></td>
+                <td><div class="skeleton-bar" style="width: 140px;"></div></td>
+                <td><div class="skeleton-bar" style="width: 90%;"></div></td>
+                <td><div class="skeleton-bar" style="width: 40px; margin: 0 auto;"></div></td>
+                <td><div class="skeleton-bar" style="width: 90px;"></div></td>
+                <td><div class="skeleton-bar" style="width: 32px; margin: 0 auto;"></div></td>
+            </tr>
+        `;
+    }
+    DOM.productsTableBody.innerHTML = rowsHtml;
+}
+
 // Fetch products based on state
 async function fetchProducts() {
-    // Show loading spinner in table body
-    DOM.productsTableBody.innerHTML = `
-        <tr>
-            <td colspan="7" class="loading-state">
-                <div class="spinner"></div>
-                <p>Mencari data master...</p>
-            </td>
-        </tr>
-    `;
+    renderSkeletonRows();
     DOM.emptyState.style.display = 'none';
 
     try {
@@ -283,20 +395,20 @@ async function fetchProducts() {
             limit: state.limit,
             offset: state.offset
         });
-        
+
         if (state.searchQuery) queryParams.append('q', state.searchQuery);
         if (state.sourceFilter) queryParams.append('source', state.sourceFilter);
         if (state.categoryFilter) queryParams.append('category', state.categoryFilter);
 
         const res = await fetch(`/api/search?${queryParams.toString()}`);
         if (!res.ok) throw new Error('API query returned an error status');
-        
+
         const data = await res.json();
-        
+
         state.products = data.results;
         state.totalCount = data.total;
         state.totalPages = Math.ceil(data.total / state.limit) || 1;
-        
+
         renderProducts();
         renderPagination();
     } catch (err) {
@@ -312,21 +424,59 @@ async function fetchProducts() {
     }
 }
 
+// Fetch SSH items based on state
+async function fetchSsh() {
+    renderSkeletonRows();
+    DOM.emptyState.style.display = 'none';
+
+    try {
+        const queryParams = new URLSearchParams({
+            limit: state.limit,
+            offset: state.offset
+        });
+
+        if (state.searchQuery) queryParams.append('q', state.searchQuery);
+        if (state.categoryFilter) queryParams.append('category', state.categoryFilter);
+
+        const res = await fetch(`/api/ssh/search?${queryParams.toString()}`);
+        if (!res.ok) throw new Error('SSH API query returned an error status');
+
+        const data = await res.json();
+
+        state.products = data.results;
+        state.totalCount = data.total;
+        state.totalPages = Math.ceil(data.total / state.limit) || 1;
+
+        renderSsh();
+        renderPagination();
+    } catch (err) {
+        console.error('Error fetching SSH:', err);
+        DOM.productsTableBody.innerHTML = `
+            <tr>
+                <td colspan="7" class="loading-state">
+                    <i class="fa-solid fa-circle-exclamation" style="font-size: 2rem; color: var(--danger-color); margin-bottom: 0.5rem;"></i>
+                    <p style="color: var(--danger-color);">Gagal memuat data SSH dari server. Pastikan database SSH sudah dibuat.</p>
+                </td>
+            </tr>
+        `;
+    }
+}
+
 // Dynamic highlighting function
 function highlight(text, query) {
+    if (!text) return '';
     if (!query) return text;
     const terms = query.strip ? query.strip().split(/\s+/) : query.trim().split(/\s+/);
     let highlightedText = text;
-    
-    // Sort terms by length descending to avoid nested highlights issues
+
     const uniqueTerms = [...new Set(terms)].filter(t => t.length > 0).sort((a, b) => b.length - a.length);
-    
+
     uniqueTerms.forEach(term => {
         const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
         const regex = new RegExp(`(${escapedTerm})`, 'gi');
         highlightedText = highlightedText.replace(regex, '<mark>$1</mark>');
     });
-    
+
     return highlightedText;
 }
 
@@ -337,35 +487,31 @@ function getSourceBadgeClass(source) {
     if (s.includes('cipta karya') || s.includes('ck')) return 'badge-ck';
     if (s.includes('sumber daya') || s.includes('sda')) return 'badge-sda';
     if (s.includes('smkk')) return 'badge-smkk';
+    if (s.includes('ssh') || s.includes('perbup')) return 'badge-ssh';
     return 'badge-umum';
 }
 
 // Render product list to the DOM table
 function renderProducts() {
     DOM.productsTableBody.innerHTML = '';
-    
+
     const countOnPage = state.products.length;
     DOM.displayedCount.textContent = countOnPage;
     DOM.totalCount.textContent = state.totalCount;
-    
+
     if (countOnPage === 0) {
         DOM.emptyState.style.display = 'flex';
         return;
     }
-    
+
     state.products.forEach((prod, index) => {
         const row = document.createElement('tr');
-        
-        // Row Numbering
         const rowNum = state.offset + index + 1;
-        
-        // Highlight terms
+
         const highlightedDesc = highlight(prod.level_4, state.searchQuery);
         const highlightedCode = highlight(prod.kode, state.searchQuery);
-        
-        // Bidang Badge
         const badgeClass = getSourceBadgeClass(prod.source_file);
-        
+
         row.innerHTML = `
             <td class="col-num">${rowNum}</td>
             <td class="col-source">
@@ -379,38 +525,114 @@ function renderProducts() {
             </td>
             <td class="col-desc">${highlightedDesc}</td>
             <td class="col-unit" style="text-align: center;">${prod.satuan || '-'}</td>
-            <td class="col-code"><span class="value-code-badge" style="font-family: monospace; font-weight: bold;">${highlightedCode}</span></td>
+            <td class="col-code">
+                <span class="copyable-badge copy-code-btn" data-code="${prod.kode}" title="Klik untuk menyalin kode">
+                    ${highlightedCode} <i class="fa-regular fa-copy"></i>
+                </span>
+            </td>
             <td class="col-actions">
                 <button class="btn-action view-btn" data-id="${prod.id}" title="Lihat detail lengkap">
                     <i class="fa-solid fa-eye"></i>
                 </button>
             </td>
         `;
-        
-        // Attach click listener for the view details button
+
+        row.querySelector('.copy-code-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            copyToClipboard(prod.kode, `Kode ${prod.kode} berhasil disalin!`);
+        });
+
         row.querySelector('.view-btn').addEventListener('click', () => {
             openDrawer(prod);
         });
-        
+
         DOM.productsTableBody.appendChild(row);
     });
 }
 
+// Render SSH list to the DOM table
+function renderSsh() {
+    DOM.productsTableBody.innerHTML = '';
+
+    const countOnPage = state.products.length;
+    DOM.displayedCount.textContent = countOnPage;
+    DOM.totalCount.textContent = state.totalCount;
+
+    if (countOnPage === 0) {
+        DOM.emptyState.style.display = 'flex';
+        return;
+    }
+
+    state.products.forEach((item, index) => {
+        const row = document.createElement('tr');
+        const rowNum = state.offset + index + 1;
+
+        const highlightedUraian = highlight(item.uraian, state.searchQuery);
+        const highlightedSpesifikasi = highlight(item.spesifikasi, state.searchQuery);
+        const highlightedCode = highlight(item.kode_kelompok, state.searchQuery);
+
+        const fullDesc = item.spesifikasi
+            ? `${highlightedUraian} <br><small style="color: var(--text-secondary);">${highlightedSpesifikasi}</small>`
+            : highlightedUraian;
+
+        row.innerHTML = `
+            <td class="col-num">${rowNum}</td>
+            <td class="col-cat">
+                <div class="cat-tag">
+                    <strong>${item.kategori}</strong>
+                </div>
+            </td>
+            <td class="col-desc">${fullDesc}</td>
+            <td class="col-unit" style="text-align: center;">${item.satuan || '-'}</td>
+            <td class="col-price" style="text-align: right;"><span class="price-tag">Rp ${item.harga_str}</span></td>
+            <td class="col-code">
+                ${item.kode_kelompok ? `<span class="copyable-badge copy-ssh-code-btn" title="Klik untuk menyalin kode">${highlightedCode} <i class="fa-regular fa-copy"></i></span>` : '-'}
+            </td>
+            <td class="col-actions">
+                <button class="btn-action view-btn" data-id="${item.id}" title="Lihat detail lengkap">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </td>
+        `;
+
+        if (item.kode_kelompok) {
+            row.querySelector('.copy-ssh-code-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                copyToClipboard(item.kode_kelompok, `Kode ${item.kode_kelompok} berhasil disalin!`);
+            });
+        }
+
+        row.querySelector('.view-btn').addEventListener('click', () => {
+            openSshDrawer(item);
+        });
+
+        DOM.productsTableBody.appendChild(row);
+    });
+}
+
+function scrollToTable() {
+    DOM.productsTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 // Render pagination dynamic layout
 function renderPagination() {
+    if (state.currentPage > state.totalPages) {
+        state.currentPage = Math.max(1, state.totalPages);
+        state.offset = (state.currentPage - 1) * state.limit;
+    }
+
     DOM.currentPage.textContent = state.currentPage;
     DOM.totalPages.textContent = state.totalPages;
-    
-    DOM.prevPageBtn.disabled = state.currentPage === 1;
-    DOM.nextPageBtn.disabled = state.currentPage === state.totalPages;
-    
+
+    DOM.prevPageBtn.disabled = state.currentPage <= 1;
+    DOM.nextPageBtn.disabled = state.currentPage >= state.totalPages;
+
     DOM.pageNumbersContainer.innerHTML = '';
-    
-    // Logic for page numbers display (centered around currentPage)
-    const range = 2; // how many pages to show before and after
+
+    const range = 2;
     let startPage = Math.max(1, state.currentPage - range);
     let endPage = Math.min(state.totalPages, state.currentPage + range);
-    
+
     if (startPage > 1) {
         addPageBtn(1);
         if (startPage > 2) {
@@ -421,11 +643,11 @@ function renderPagination() {
             DOM.pageNumbersContainer.appendChild(sep);
         }
     }
-    
+
     for (let p = startPage; p <= endPage; p++) {
         addPageBtn(p);
     }
-    
+
     if (endPage < state.totalPages) {
         if (endPage < state.totalPages - 1) {
             const sep = document.createElement('span');
@@ -443,20 +665,23 @@ function addPageBtn(pageNum) {
     btn.className = `page-num-btn ${state.currentPage === pageNum ? 'active' : ''}`;
     btn.textContent = pageNum;
     btn.addEventListener('click', () => {
-        state.currentPage = pageNum;
-        state.offset = (pageNum - 1) * state.limit;
-        fetchProducts();
+        if (state.currentPage !== pageNum) {
+            state.currentPage = pageNum;
+            state.offset = (pageNum - 1) * state.limit;
+            fetchData();
+            scrollToTable();
+        }
     });
     DOM.pageNumbersContainer.appendChild(btn);
 }
 
-// Open details slide-out drawer
+// Open details slide-out drawer for Master Data Produk
 function openDrawer(prod) {
     DOM.detailDrawer.classList.add('active');
-    
+
     const badgeClass = getSourceBadgeClass(prod.source_file);
     const highlightedScope = highlight(prod.lingkup || 'Tidak ada keterangan ruang lingkup kegiatan dalam dokumen ini.', state.searchQuery);
-    
+
     DOM.drawerBody.innerHTML = `
         <div class="drawer-section">
             <label>Bidang/Sumber</label>
@@ -508,13 +733,75 @@ function openDrawer(prod) {
         </div>
     `;
 
-    // Attach copy actions
     document.getElementById('copyCodeBtn').addEventListener('click', () => {
         copyToClipboard(prod.kode, 'Kode produk berhasil disalin!');
     });
-    
+
     document.getElementById('copyDescBtn').addEventListener('click', () => {
         copyToClipboard(prod.level_4, 'Deskripsi item pekerjaan berhasil disalin!');
+    });
+}
+
+// Open details slide-out drawer for SSH Bupati
+function openSshDrawer(item) {
+    DOM.detailDrawer.classList.add('active');
+
+    DOM.drawerBody.innerHTML = `
+        <div class="drawer-section">
+            <label>Sumber Regulasi</label>
+            <div class="value">
+                <span class="badge badge-ssh badge-source" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">${item.source_file}</span>
+            </div>
+        </div>
+
+        <div class="drawer-section">
+            <label>Kode Kelompok Barang</label>
+            <div class="value">
+                <span class="value-code">${item.kode_kelompok || '-'}</span>
+            </div>
+        </div>
+
+        <div class="drawer-section">
+            <label>Kategori Utama</label>
+            <div class="value"><strong>${item.kategori}</strong></div>
+        </div>
+
+        <div class="drawer-section">
+            <label>Uraian Barang</label>
+            <div class="value value-desc">${item.uraian}</div>
+        </div>
+
+        <div class="drawer-section">
+            <label>Spesifikasi Teknis</label>
+            <div class="value">${item.spesifikasi || '-'}</div>
+        </div>
+
+        <div class="drawer-section">
+            <label>Satuan Pengukuran</label>
+            <div class="value"><strong>${item.satuan || 'Tidak ada satuan'}</strong></div>
+        </div>
+
+        <div class="drawer-section">
+            <label>Harga Satuan Standar (Rp)</label>
+            <div class="value" style="font-size: 1.2rem; font-weight: 700; color: #34d399; font-family: monospace;">Rp ${item.harga_str}</div>
+        </div>
+
+        <div class="drawer-actions">
+            <button class="btn-drawer-action" id="copySshCodeBtn">
+                <i class="fa-solid fa-copy"></i> Salin Kode
+            </button>
+            <button class="btn-drawer-action btn-primary" id="copySshPriceBtn">
+                <i class="fa-solid fa-coins"></i> Salin Harga
+            </button>
+        </div>
+    `;
+
+    document.getElementById('copySshCodeBtn').addEventListener('click', () => {
+        copyToClipboard(item.kode_kelompok, 'Kode kelompok barang berhasil disalin!');
+    });
+
+    document.getElementById('copySshPriceBtn').addEventListener('click', () => {
+        copyToClipboard(`Rp ${item.harga_str}`, 'Harga satuan berhasil disalin!');
     });
 }
 
@@ -536,7 +823,7 @@ function copyToClipboard(text, message) {
 function showToast(message) {
     DOM.toastMessage.textContent = message;
     DOM.toastNotification.classList.add('show');
-    
+
     setTimeout(() => {
         DOM.toastNotification.classList.remove('show');
     }, 2500);
@@ -576,10 +863,10 @@ async function processBulkSearch() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text })
         });
-        
+
         if (!res.ok) throw new Error('Bulk search failed');
         const data = await res.json();
-        
+
         state.bulkResults = data.results;
         renderBulkResults();
     } catch (err) {
@@ -601,7 +888,7 @@ async function processBulkSearch() {
 // Render parsed bulk search items to modal results table
 function renderBulkResults() {
     DOM.bulkResultsTableBody.innerHTML = '';
-    
+
     if (state.bulkResults.length === 0) {
         DOM.bulkResultsTableBody.innerHTML = `
             <tr>
@@ -612,13 +899,13 @@ function renderBulkResults() {
         `;
         return;
     }
-    
+
     state.bulkResults.forEach(r => {
         const tr = document.createElement('tr');
-        
+
         let statusBadge = '';
         let matchDetail = '';
-        
+
         if (r.found_by === 'code') {
             statusBadge = '<span class="status-badge status-exact"><i class="fa-solid fa-circle-check"></i> Cocok (Kode)</span>';
             const m = r.match;
@@ -643,18 +930,17 @@ function renderBulkResults() {
             statusBadge = '<span class="status-badge status-none"><i class="fa-solid fa-circle-xmark"></i> Tidak Cocok</span>';
             matchDetail = '<div style="color: var(--text-muted); font-style: italic;">Tidak ditemukan kecocokan di database master</div>';
         }
-        
-        // Highlight matched strings
+
         const displayLine = r.raw_line.trim().length > 100 ? r.raw_line.trim().slice(0, 100) + '...' : r.raw_line.trim();
         const displayCodeBadge = r.parsed_code ? `<span class="value-code-badge">${r.parsed_code}</span>` : '<span style="color: var(--text-muted); font-size: 0.8rem;">-</span>';
-        
+
         tr.innerHTML = `
             <td style="font-size: 0.85rem; color: var(--text-secondary); word-break: break-word;">${displayLine}</td>
             <td style="text-align: center; vertical-align: middle;">${displayCodeBadge}</td>
             <td>${matchDetail}</td>
             <td style="text-align: center; vertical-align: middle;">${statusBadge}</td>
         `;
-        
+
         DOM.bulkResultsTableBody.appendChild(tr);
     });
 }
@@ -665,10 +951,10 @@ function exportBulkResultsCsv() {
         showToast('Belum ada data hasil analisis untuk diekspor!');
         return;
     }
-    
+
     const headers = ["No", "Baris Input Asli", "Kode Terdeteksi", "Status Cocok", "Kode Master", "Item Pekerjaan Master", "Satuan", "Sumber Master Bidang"];
     const rows = [headers];
-    
+
     state.bulkResults.forEach(r => {
         const m = r.match || {};
         rows.push([
@@ -682,17 +968,17 @@ function exportBulkResultsCsv() {
             m.source_file || ''
         ]);
     });
-    
+
     const csvContent = rows.map(e => e.map(val => `"${String(val).replace(/"/g, '""')}"`).join(",")).join("\n");
     const blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
-    
+
     const link = document.createElement("a");
     link.setAttribute("href", url);
     link.setAttribute("download", "hasil_analisis_massal_produk.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
+
     showToast('Hasil analisis massal berhasil diekspor ke CSV!');
 }

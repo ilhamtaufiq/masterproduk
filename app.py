@@ -17,6 +17,7 @@ app = FastAPI(
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "master_produk.db")
+SSH_DB_PATH = os.path.join(BASE_DIR, "ssh.db")
 
 # Ensure the database exists
 def get_db_connection():
@@ -26,6 +27,16 @@ def get_db_connection():
             detail="Database file not found. Please run the extract_data.py script first."
         )
     conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def get_ssh_db_connection():
+    if not os.path.exists(SSH_DB_PATH):
+        raise HTTPException(
+            status_code=500,
+            detail="Database SSH tidak ditemukan. Silakan jalankan script extract_ssh.py terlebih dahulu."
+        )
+    conn = sqlite3.connect(SSH_DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -292,6 +303,136 @@ def bulk_search(request: BulkSearchRequest):
 @app.get("/")
 def read_root():
     return FileResponse(os.path.join(BASE_DIR, "static", "index.html"))
+
+# SSH API Endpoints
+@app.get("/api/ssh/categories")
+def get_ssh_categories():
+    """Retrieve all unique SSH categories."""
+    try:
+        conn = get_ssh_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT DISTINCT kategori FROM ssh ORDER BY kategori")
+        categories = [row["kategori"] for row in cursor.fetchall() if row["kategori"]]
+        conn.close()
+        return {"categories": categories}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+def build_ssh_search_query(q: Optional[str] = None, category: Optional[str] = None):
+    query = "SELECT * FROM ssh WHERE 1=1"
+    params = []
+
+    if category:
+        query += " AND kategori = ?"
+        params.append(category)
+
+    if q:
+        terms = q.strip().split()
+        for term in terms:
+            term_pattern = f"%{term}%"
+            query += """ AND (
+                kode_kelompok LIKE ? OR
+                kategori LIKE ? OR
+                uraian LIKE ? OR
+                spesifikasi LIKE ? OR
+                harga_str LIKE ?
+            )"""
+            params.extend([term_pattern] * 5)
+
+    return query, params
+
+@app.get("/api/ssh/search")
+def search_ssh(
+    q: Optional[str] = Query(None, description="Search terms"),
+    category: Optional[str] = Query(None, description="Filter by Category"),
+    limit: int = Query(50, ge=1, le=1000),
+    offset: int = Query(0, ge=0)
+):
+    """Search SSH (Standar Satuan Harga Bupati) items."""
+    try:
+        conn = get_ssh_db_connection()
+        cursor = conn.cursor()
+
+        base_query, params = build_ssh_search_query(q, category)
+
+        count_query = f"SELECT COUNT(*) as total FROM ({base_query})"
+        cursor.execute(count_query, params)
+        total_count = cursor.fetchone()["total"]
+
+        search_query = f"{base_query} ORDER BY kategori, uraian, spesifikasi LIMIT ? OFFSET ?"
+        cursor.execute(search_query, params + [limit, offset])
+        rows = cursor.fetchall()
+
+        results = []
+        for r in rows:
+            results.append({
+                "id": r["id"],
+                "source_file": r["source_file"],
+                "kode_kelompok": r["kode_kelompok"],
+                "kategori": r["kategori"],
+                "uraian": r["uraian"],
+                "spesifikasi": r["spesifikasi"],
+                "satuan": r["satuan"],
+                "harga": r["harga"],
+                "harga_str": r["harga_str"]
+            })
+
+        conn.close()
+        return {
+            "total": total_count,
+            "limit": limit,
+            "offset": offset,
+            "results": results
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/ssh/export")
+def export_ssh(
+    q: Optional[str] = Query(None),
+    category: Optional[str] = Query(None)
+):
+    """Export SSH search results to a CSV file."""
+    try:
+        conn = get_ssh_db_connection()
+        cursor = conn.cursor()
+
+        base_query, params = build_ssh_search_query(q, category)
+        export_query = f"{base_query} ORDER BY kategori, uraian, spesifikasi"
+        cursor.execute(export_query, params)
+        rows = cursor.fetchall()
+
+        output = io.StringIO()
+        writer = csv.writer(output)
+
+        writer.writerow([
+            "No", "Sumber", "Kode Kelompok", "Kategori",
+            "Uraian Barang", "Spesifikasi", "Satuan", "Harga Satuan (Rp)"
+        ])
+
+        for idx, r in enumerate(rows):
+            writer.writerow([
+                idx + 1,
+                r["source_file"],
+                r["kode_kelompok"],
+                r["kategori"],
+                r["uraian"],
+                r["spesifikasi"],
+                r["satuan"],
+                r["harga_str"]
+            ])
+
+        conn.close()
+
+        output.seek(0)
+        response = StreamingResponse(
+            io.BytesIO(output.getvalue().encode("utf-8")),
+            media_type="text/csv"
+        )
+        response.headers["Content-Disposition"] = "attachment; filename=ssh_bupati_export.csv"
+        return response
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 # Serve the static files directory
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")

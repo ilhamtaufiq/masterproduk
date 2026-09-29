@@ -36,10 +36,20 @@
 
         <!-- Main Panel -->
         <main class="app-main">
+            <!-- Mode Switcher Tabs -->
+            <div class="mode-tabs">
+                <button id="tabMasterProduk" class="mode-tab active">
+                    <i class="fa-solid fa-boxes-stacked"></i> Master Data Produk (SE 47/2026)
+                </button>
+                <button id="tabSshBupati" class="mode-tab">
+                    <i class="fa-solid fa-coins"></i> Harga Standar Bupati (Perbup 55/2025)
+                </button>
+            </div>
+
             <!-- Top Hero Banner / Description -->
             <section class="hero-banner">
-                <h2>Cari & Kelola Master Data Pekerjaan</h2>
-                <p>Akses cepat data spesifikasi teknis, satuan, kode produk, dan ruang lingkup kegiatan PUPR (Bina Marga, Cipta Karya, Sumber Daya Air, SMKK, dan Umum) secara instan.</p>
+                <h2 id="heroTitle">Cari & Kelola Master Data Pekerjaan</h2>
+                <p id="heroDesc">Akses cepat data spesifikasi teknis, satuan, kode produk, dan ruang lingkup kegiatan PUPR (Bina Marga, Cipta Karya, Sumber Daya Air, SMKK, dan Umum) secara instan.</p>
             </section>
 
             <!-- Search and Filter Control Center -->
@@ -47,6 +57,7 @@
                 <div class="search-bar-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
                     <input type="text" id="globalSearchInput" placeholder="Masukkan kata kunci pencarian (misal: 'pagar', 'tanah', 'U.1.1')..." autocomplete="off">
+                    <kbd class="search-shortcut-hint" title="Tekan / untuk fokus pencarian">/</kbd>
                     <button id="clearSearchBtn" class="clear-btn" style="display: none;">
                         <i class="fa-solid fa-xmark"></i>
                     </button>

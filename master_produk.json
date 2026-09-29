@@ -5,9 +5,9 @@
     "kategori_2": "Divisi 1 Umum dan Penerapan SMKK",
     "kategori_3": "1.2 Mobilisasi",
     "level_4": "Mobilisasi:",
-    "satuan": "LS",
+    "satuan": "",
     "kode": "",
-    "lingkup": "Penyewaan atau pembelian sebidang lahan yang diperlukan untuk base camp Penyedia Jasa dan kegiatan pelaksanaan. Mengacu ke Spesifikasi Umum 2025 Seksi 1.2."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -17,7 +17,7 @@
     "level_4": "Sewa Lahan",
     "satuan": "m2",
     "kode": "1.2.(1)",
-    "lingkup": ""
+    "lingkup": "Penyewaan atau pembelian sebidang lahan yang diperlukan untuk base camp Penyedia Jasa dan kegiatan pelaksanaan. Mengacu ke Spesifikasi Umum 2025 Seksi 1.2."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -37,7 +37,7 @@
     "level_4": "Mobilisasi dan Demobilisasi Asphalt Mixing Plant; 60 T/Jam",
     "satuan": "Unit",
     "kode": "1.2.(2).1",
-    "lingkup": "Mobilisasi dan pemasangan instalasi konstruksi dan semua peralatan sesuai dengan daftar peralatan yang tercantum dalam Penawaran yang diperlukan selama pelaksanaan Pekerjaan, dari suatu lokasi asal ke tempat pekerjaan di mana peralatan tersebut akan digunakan menurut Kontrak termasuk perkuatan jembatan eksisting untuk pengangkutan alat-alat berat (jika diperlukan). Mengacu ke Spesifikasi Umum 2025 Seksi 1.2."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -1487,7 +1487,7 @@
     "level_4": "Galian untuk Selokan Drainase dan Saluran Air",
     "satuan": "m3",
     "kode": "2.1.(1)",
-    "lingkup": "Pekerjaan ini mencakup galian selokan baru yang dilapisi (lined) maupun tidak (unlined), sesuai dengan Spesifikasi Umum 2025 serta memenuhi garis, ketinggian, dan detail yang ditunjukkan pada Gambar. Selokan yang dilapisi akan dibuat dari pasangan batu dengan mortar atau yang seperti ditunjukkan dalam Gambar. Pekerjaan ini juga mencakup relokasi atau perlindungan terhadap sungai yang ada, kanal irigasi atau saluran air (waterway) lainnya yang pasti tidak terhindarkan dari gangguan baik yang bersifat sementara maupun tetap, dalam penyelesaian pekerjaan yang memenuhi ketentuan dalam Spesifikasi Umum 2025."
+    "lingkup": "Pekerjaan ini mencakup galian selokan baru yang dilapisi (lined) maupun tidak (unlined), sesuai dengan Spesifikasi Umum 2025 serta memenuhi garis, ketinggian, dan detail yang ditunjukkan pada Gambar. Selokan yang dilapisi akan dibuat dari pasangan batu dengan mortar atau yang seperti ditunjukkan dalam Gambar. Pekerjaan ini juga mencakup relokasi atau perlindungan terhadap sungai yang ada, kanal irigasi atau saluran air (waterway) lainnya yang pasti tidak terhindarkan dari gangguan baik yang bersifat sementara maupun tetap, dalam penyelesaian pekerjaan yang memenuhi ketentuan dalam Spesifikasi Umum 2025. Mengacu ke Spesifikasi Umum 2025 Seksi 2.1"
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -1497,7 +1497,7 @@
     "level_4": "Pasangan Batu dengan Mortar",
     "satuan": "m3",
     "kode": "2.2.(1)",
-    "lingkup": "MPeeknegrjaacaun k ien iS mpeesnifciakkausip U pmemumbu 2a0t2a5n Sseelkoski a2n.1 dan saluran air, dan pembuatan \"apron\" (lantai golak), lubang masuk (entry pits) dan struktur saluran kecil lainnya dengan menggunakan pasangan batu dengan mortar yang dibangun di atas suatu dasar yang telah disiapkan memenuhi garis, ketinggian dan dimensi yang ditunjukkan pada Gambar atau sebagaimana diperintahkan oleh Pengawas Pekerjaan. Pekerjaan ini juga mencakup pembuatan lubang sulingan (weep holes), termasuk penyediaan dan pemasangan cetakan lubang sulingan atau pipa. Mengacu ke Spesifikasi Umum 2025 Seksi 2.2."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -1567,7 +1567,7 @@
     "level_4": "Gorong-gorong Pipa Beton Tanpa Tulangan diameter dalam 20 cm",
     "satuan": "m",
     "kode": "2.3.(1)",
-    "lingkup": "Pekerjaan ini mencakup perbaikan, perpanjangan, penggantian atau pembuatan gorong-gorong pipa pracetak bertulang maupun tanpa tulangan, pipa logam gelombang (corrugated), gorong-gorong kotak pracetak dan pelat beton bertulang, catch basin, inlet dan outlet termasuk tembok kepala, struktur lubang masuk dan keluar, serta pekerjaan lainnya yang berhubungan dengan perlindungan terhadap penggerusan, sesuai dengan Gambar dan Spesifikasi Umum 2025 dan pada lokasi yang ditunjukkan oleh Pengawas Pekerjaan. Pekerjaan ini juga mencakup pemasangan drainase dengan pelapisan beton (concrete lined drains) pracetak (kecuali tipe trapesium), bilamana diperlukan dilengkapi dengan pelat penutup, pada lokasi yang disetujui seperti dalam daerah perkotaan dan di mana air rembesan dari selokan yang tidak dilapisi dapat mengakibatkan ketidakstabilan lereng. Mengacu ke Spesifikasi Umum 2025 Seksi 2.3."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -2267,7 +2267,7 @@
     "level_4": "Bahan Drainase Porous atau Penyaring (Filter)",
     "satuan": "m3",
     "kode": "2.4.(1)",
-    "lingkup": "Pekerjaan ini mencakup pengadaan, pengangkutan, pemasangan dan pemadatan bahan porous untuk landasan drainase beton atau pipa atau drainase bawah tanah untuk mencegah butiran tanah halus terhanyut atau tergerus oleh rembesan air bawah tanah. Pekerjaan ini juga mencakup pengadaan dan pemasangan pipa berlubang banyak (perforated pipes) yang terbuat dari PVC dan anyaman penyaring tanah (soil filter fabric) bilamana bahan ini diperlukan."
+    "lingkup": "Pekerjaan ini mencakup pengadaan, pengangkutan, pemasangan dan pemadatan bahan porous untuk landasan drainase beton atau pipa atau drainase bawah tanah untuk mencegah butiran tanah halus terhanyut atau tergerus oleh rembesan air bawah tanah. Pekerjaan ini juga mencakup pengadaan dan pemasangan pipa berlubang banyak (perforated pipes) yang terbuat dari PVC dan anyaman penyaring tanah (soil filter fabric) bilamana bahan ini diperlukan. Mengacu ke Spesifikasi Umum 2025 Seksi 2.4."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -2277,7 +2277,7 @@
     "level_4": "Pipa Berlubang Banyak (Perforated Pipes) untuk Pekerjaan Drainase Bawah Permukaan, Diameter 4 inci",
     "satuan": "m",
     "kode": "2.4.(2)",
-    "lingkup": "Mengacu ke Spesifikasi Umum 2025 Seksi 2.4."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -2317,7 +2317,7 @@
     "level_4": "Galian Biasa",
     "satuan": "m3",
     "kode": "3.1.(1)",
-    "lingkup": "Pekerjaan ini harus mencakup penggalian, penanganan, pembuangan atau penumpukan tanah atau batu atau bahan lain dari jalan atau sekitarnya yang diperlukan untuk penyelesaian dari pekerjaan dalam Kontrak. Mengacu ke Spesifikasi Umum 2025 Seksi 3.1."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -2637,7 +2637,7 @@
     "level_4": "Penyiapan Badan Jalan pada Galian",
     "satuan": "m2",
     "kode": "3.3.(1a)",
-    "lingkup": "Pekerjaan ini mencakup penyiapan, penggaruan, dan pemadatan permukaan tanah dasar atau permukaan jalan kerikil lama, termasuk pemadatan cerdas (intelligent compaction) untuk penghamparan: Lapis Fondasi Agregat, Lapis Fondasi Jalan Tanpa Penutup Aspal, Stabilisasi Tanah (Soil Stabilization) atau Lapis Fondasi Beraspal di daerah jalur lalu lintas (termasuk jalur tempat perhentian dan persimpangan) dan di daerah bahu jalan baru yang bukan di atas timbunan baru akibat pelebaran lajur lalu lintas. Mengacu ke Spesifikasi Umum 2025 Seksi 3.3."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -2647,7 +2647,7 @@
     "level_4": "Penyiapan Badan Jalan pada Galian dengan Pemadatan Cerdas (IC)",
     "satuan": "m2",
     "kode": "3.3.(1b)",
-    "lingkup": ""
+    "lingkup": "(intelligent compaction) untuk penghamparan: Lapis Fondasi Agregat, Lapis Fondasi Jalan Tanpa Penutup Aspal, Stabilisasi Tanah (Soil Stabilization) atau Lapis Fondasi Beraspal di daerah jalur lalu lintas (termasuk jalur tempat perhentian dan persimpangan) dan di daerah bahu jalan baru yang bukan di atas timbunan baru akibat pelebaran lajur lalu lintas. Mengacu ke Spesifikasi Umum 2025 Seksi 3.3."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -2727,7 +2727,7 @@
     "level_4": "Geotekstil Filter untuk Drainase Bawah Permukaan Kelas 2",
     "satuan": "m2",
     "kode": "3.5.(1a)",
-    "lingkup": "Pekerjaan ini mencakup pengadaan, pemasokan dan pemasangan bahan geotekstil filter (seperti drainase bawah permukaan), separator, stabilisasi tanah (soil stabilization), dan stabilisasi tanah dasar (subgrade vstabilization). Mengacu ke Spesifikasi Umum 2025 Seksi 3.5."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -2847,7 +2847,7 @@
     "level_4": "Pisometer Pipa Terbuka Casagrande atau Open/ Water Standpipe Piezometer (Pemantauan Tekanan Air Pori)",
     "satuan": "Titik",
     "kode": "3.7.(1)",
-    "lingkup": "Lingkup pekerjaan dalam Spesifikasi Umum 2025 meliputi: penyediaan, pemasangan, pemantauan dan analisis data dengan menggunakan instrumentasi yang disyaratkan dalam Spesifikasi Umum 2025 untuk memantau penurunan vertikal, pergerakan horizontal, dan tekanan total yang harus dipasang dan diatur seperti yang ditunjukkan dalam Gambar, seperti: Vibrating Wire Piezometer, Standpipe Piezometer, Settlement Plate, Settlement Probe, Settlement Sensor, Magnetic Extensometer, Inclinometer, dan Total Pressure Cell."
+    "lingkup": "Lingkup pekerjaan dalam Spesifikasi Umum 2025 meliputi: penyediaan, pemasangan, pemantauan dan analisis data dengan menggunakan instrumentasi yang disyaratkan dalam Spesifikasi Umum 2025 untuk memantau penurunan vertikal, pergerakan horizontal, dan tekanan total yang harus dipasang dan diatur seperti yang ditunjukkan dalam Gambar, seperti: Vibrating Wire Piezometer, Standpipe Piezometer, Settlement Plate, Settlement Probe, Settlement Sensor, Magnetic Extensometer, Inclinometer, dan Total Pressure Cell. Mengacu ke Spesifikasi Umum 2025 Seksi 3.7."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -2857,7 +2857,7 @@
     "level_4": "Vibrating Wire Piezometer (Pemantauan Tekanan Air Pori pada Kedalaman Tertentu)",
     "satuan": "Titik",
     "kode": "3.7.(2)",
-    "lingkup": "Mengacu ke Spesifikasi Umum 2025 Seksi 3.7."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3017,7 +3017,7 @@
     "level_4": "Lapis Permukaan Mikro dengan Aspal Emulsi Modifikasi Polymer CQS-1hP atau QS- 1hP untuk Tipe 1",
     "satuan": "m2",
     "kode": "4.5.(1)",
-    "lingkup": "Lapis permukaan mikro harus mencakup suatu campuran dari polymer-modified aspal emulsi yang disetujui, agregat, air, dan bahan tambahan khusus, secara proporsional, yang dicampur dan digelar merata di atas permukaan perkerasan beraspal. Lapis permukaan mikro yang sudah selesai harus secara homogen merekat dengan baik terhadap lapis permukaan perkerasan, dan tekstur permukaannya memiliki kekesatan selama umur rencananya. Mengacu pada Spesifikasi Umum 2025 seksi 4.5."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3077,7 +3077,7 @@
     "level_4": "Lapis Tipis Beton Aspal - A (LTBA-A) (Tumbukan 75 x 2)",
     "satuan": "Ton",
     "kode": "4.7.(1)",
-    "lingkup": "Pekerjaan Lapis Tipis Beton Aspal (LTBA) dan Stone Matrix Asphalt Tipis (SMA Tipis) ini diterapkan pada jalan dengan perkerasan beraspal dalam kondisi pelayanan mantap, sesuai dengan lokasi yang sudah ditetapkan di dalam Gambar. Pekerjaan ini digunakan untuk menanggulangi kerusakan permukaan jalan seperti alur (rutting), pelepasan butir (raveling), retak, dan memiliki fungsi sebagai lapisan fungsional serta lapis kedap air. Digunakan untuk pekerjaan pemeliharaan preventif yang tidak dapat ditangani dengan teknologi preventif lainnya. LTBA-B Halus dengan tumbukan 35x2 dapat digunakan untuk lapis permukaan di atas bangunan pelengkap seperti trotoar dan lain sebagainya. LTBA-B Halus dengan tumbukan 50x2 dapat digunakan untuk lapis permukaan yang lebih lentur dari LTBA-B Halus dengan tumbukan 75x2, sebagai pengganti Lataston- Lapis Aus (Lataston-WC) jika tidak terdapat sumber pasir alam halus di lokasi pekerjaan tersebut. Mengacu pada Spesifikasi Umum 2025 seksi 4.7."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3227,7 +3227,7 @@
     "level_4": "Penjahitan Melintang Tipe 1 (Tebal Pelat Beton = 150 - 175 mm)",
     "satuan": "Buah",
     "kode": "4.11.(1)",
-    "lingkup": "Pekerjaan penjahitan melintang (cross stitching) ini diterapkan pada permukaan perkerasan beton semen, baik yang mengalami retak memanjang ataupun untuk pengikat sambungan memanjang yang mengalami pemisahan. Mengacu pada Sepesifikasi Umum 2025 Seksi 4.11."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3307,7 +3307,7 @@
     "level_4": "Penutupan Sambungan Melintang (Termoplastik)",
     "satuan": "m",
     "kode": "4.12.(1)",
-    "lingkup": "Pekerjaan ini bertujuan untuk mengurangi air yang masuk ke dalam struktur perkerasan sehingga mengurangi kerusakan perkerasan yang ditimbulkan oleh air; serta untuk mencegah intrusi bahan keras ke dalam sambungan memanjang dan melintang (kecuali expansion joint), dan retak, sehingga mencegah kerusakan akibat tegangan; seperti gompal (spalling), tekuk ke atas (blowup atau buckling), dan kehancuran pelat. Penutupan retak dapat dilakukan terhadap retak garis yang mempunyai tingkat keparahan rendah atau sedang dengan lebar retak lebih kecil dari 13 mm. Mengacu pada Sepesifikasi Umum 2025 Seksi 4.12."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3517,7 +3517,7 @@
     "level_4": "Perkerasan Beton Semen, fs = 4,5 MPa",
     "satuan": "m3",
     "kode": "5.3.(1a1)",
-    "lingkup": "Pekerjaan ini meliputi pembuatan (construction) atau rekonstruksi atau penambahan lajur Perkerasan Beton Semen (Perkerasan Kaku) termasuk Continuously Reinforced Concrete Pavement (CRCP) dan Lapis Fondasi Bawah Beton Kurus (Lean Concrete Subbase) yang dilaksanakan sesuai dengan dengan ketebalan dan bentuk penampang melintang seperti yang ditunjukkan dalam Gambar. Mengacu ke Spesifikasi Umum 2025 Seksi 5.3."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3727,7 +3727,7 @@
     "level_4": "Lapis Fondasi Agregat Semen (Cement Treated Base, CTB)",
     "satuan": "m3",
     "kode": "5.5.(1)",
-    "lingkup": "Pekerjaan Lapis Fondasi Agregat Semen (Cement Treated Base, CTB) ini meliputi penyediaan material, pencampuran dengan alat pencampur berpenggerak sendiri (self propelled mixer), pengangkutan, penghamparan, pemadatan, termasuk pemadatan cerdas (intelligent compaction) sebagaimana yang diuraikan dalam Pasal 3.2.1.1).b), pembentukan permukaan (shaping), perawatan (curing) dan penyelesaian (finishing), dan kegiatan insidentil yang berhubungan dengan pelaksanaan pekerjaan lapis fondasi agregat semen, sesuai dengan Spesifikasi, garis, kelandaian, ketebalan, dan penampang melintang sebagaimana tertera pada Gambar atau yang ditentukan oleh Pengawas Pekerjaan. Perkerasan Lapis Fondasi Daur Ulang Agregat Semen (Cement Tretaed Recycling Base, CTRB) terdiri dari kombinasi yang merata dari bahan lapis fondasi agregat baik lama maupun baru, hasil galian perkerasan aspal, dan semen yang dicampur secara merata, dibasahi dan dipadatkan sesuai dengan Spesifikasi ini dan dibentuk agar sesuai dengan garis, elevasi, ketebalan, dan penampang tipikal yang ditunjukkan dalam Gambar atau sebagaimana yang diperintahkan atau disetujui oleh Pengawas Pekerjaan. Pemadatan Cerdas digunakan untuk memperoleh keseragaman mutu pemadatan dan harus diterapkan pada pembangunan : jalan bebas hambatan dan jalan non bebas hambatan 4 (empat) lajur atau lebih, dan jalan lainnya yang disebutkan dalam Syarat-Syarat Khusus Kontrak (SSKK). Mengacu ke Spesifikasi Umum 2025 Seksi 5.5."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3757,7 +3757,7 @@
     "level_4": "Lapis Fondasi Daur Ulang Agregat Semen (Cement Treated Recycling Base, CTRB) dengan Mesin Gilas Pemadatan Cerdas (IC)",
     "satuan": "m3",
     "kode": "5.5.(4)",
-    "lingkup": ""
+    "lingkup": "disebutkan dalam Syarat-Syarat Khusus Kontrak (SSKK). Mengacu ke Spesifikasi Umum 2025 Seksi 5.5."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3807,7 +3807,7 @@
     "level_4": "Agregat Penutup BURTU Gradasi 1",
     "satuan": "m2",
     "kode": "6.2.(1a)",
-    "lingkup": "Pekerjaan ini mencakup pelaksanaan pekerjaan pelaburan aspal (surface dressing) yang dapat terdiri dari laburan aspal satu atau dua lapis, setiap lapis diberi pengikat aspal dan kemudian ditutup dengan butiran agregat (chipping). Pelaburan aspal (surface dressing) ini umumnya dihampar di atas Lapis Fondasi Agregat Kelas A yang sudah diberi Lapis Resap Pengikat atau Lapis Fondasi Berbahan Pengikat Semen atau Aspal, atau di atas suatu permukaan beraspal eksisting untuk pemeliharaan. Pekerjaan ini juga mencakup pelaksanaan pekerjaan Stress Absorbing Membrane Interlayer (SAMI) yang terdiri dari laburan aspal satu lapis dengan aspal modifikasi PG 64E untuk mencegah retak refleksi ke lapisan perkerasan di atasnya. Pelaburan aspal ini umumnya dihampar di atas Perkerasan Beton Semen atau Perkerasan Aspal lama atau Lapis Fondasi Agregat Semen (Cement Treated Base, CTB) yang mengalami kerusakan struktural. Mengacu ke Spesifikasi Umum 2025 Seksi 6.2."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3887,7 +3887,7 @@
     "level_4": "Stone Matrix Asphalt Halus (SMA Halus)",
     "satuan": "Ton",
     "kode": "6.3.(1a1)",
-    "lingkup": "Pekerjaan ini mencakup pengadaan lapisan padat yang awet berupa lapis perata, lapis fondasi, lapis antara, atau lapis aus campuran beraspal panas yang terdiri dari agregat, bahan aspal, bahan anti pengelupasan, dan bahan tambah atau stabilizer untuk Stone Matrix Asphalt (SMA), yang dicampur secara panas di pusat instalasi pencampuran, serta menghampar dan memadatkan (termasuk dengan pemadatan cerdas (intelligent compaction) sebagaimana yang diuraikan dalam Pasal 3.2.1.1).b)) campuran tersebut di atas fondasi atau permukaan jalan yang telah disiapkan sesuai dengan Spesifikasi ini dan memenuhi garis, kelandaian, elevasi/ketinggian dan potongan memanjang yang ditunjukkan dalam Gambar. Mengacu ke Spesifikasi Umum 2025 Seksi 6.3."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -3907,7 +3907,7 @@
     "level_4": "Stone Matrix Asphalt Modifikasi Halus (SMA Mod Halus)",
     "satuan": "Ton",
     "kode": "6.3.(1b1)",
-    "lingkup": ""
+    "lingkup": "pusat instalasi pencampuran, serta menghampar dan memadatkan (termasuk dengan pemadatan cerdas (intelligent compaction) sebagaimana yang diuraikan dalam Pasal 3.2.1.1).b)) campuran tersebut di atas fondasi atau permukaan jalan yang telah disiapkan sesuai dengan Spesifikasi ini dan memenuhi garis, kelandaian, elevasi/ketinggian dan potongan memanjang yang ditunjukkan dalam Gambar. Mengacu ke Spesifikasi Umum 2025 Seksi 6.3."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -4154,9 +4154,9 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 6 Perkerasan Aspal",
     "kategori_3": "6.5 Campuran Beraspal Panas dengan Asbuton Butir",
-    "level_4": "Laston Lapis Aus Asbuton Butir (AC-WC Asbuton Butir)",
+    "level_4": "Laston Lapis Aus Asbuton Butir 5/20 (AC-WC Asbuton Butir 5/20)",
     "satuan": "Ton",
-    "kode": "6.5.(1a)",
+    "kode": "6.5.(1a).B5/20",
     "lingkup": "Pekerjaan ini mencakup pengadaan lapisan padat yang awet berupa lapis perata, lapis fondasi, lapis antara atau lapis aus campuran beraspal panas yang terdiri dari agregat dan aspal modifikasi asbuton yang dicampur secara panas di pusat instalasi pencampuran, serta menghampar dan memadatkan campuran tersebut di atas lapis fondasi atau permukaan jalan eksisting yang telah disiapkan sesuai dengan seksi ini dan memenuhi garis, ketinggian dan potongan memanjang yang ditunjukkan dalam Gambar. Mengacu ke Spesifikasi Umum 2025 Seksi 6.5."
   },
   {
@@ -4164,9 +4164,9 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 6 Perkerasan Aspal",
     "kategori_3": "6.5 Campuran Beraspal Panas dengan Asbuton Butir",
-    "level_4": "Laston Lapis Aus Asbuton Butir (AC-WC Asbuton Butir) dengan Mesin Gilas Pemadatan Cerdas (IC)",
+    "level_4": "Laston Lapis Aus Asbuton Butir 5/20 (AC-WC Asbuton Butir 5/20) dengan Mesin Gilas Pemadatan Cerdas (IC)",
     "satuan": "Ton",
-    "kode": "6.5.(1b)",
+    "kode": "6.5.(1b).B5/20",
     "lingkup": ""
   },
   {
@@ -4174,9 +4174,9 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 6 Perkerasan Aspal",
     "kategori_3": "6.5 Campuran Beraspal Panas dengan Asbuton Butir",
-    "level_4": "Laston Lapis Antara Asbuton Butir (AC-BC Asbuton Butir)",
+    "level_4": "Laston Lapis Antara Asbuton Butir 5/20 (AC-BC Asbuton Butir 5/20)",
     "satuan": "Ton",
-    "kode": "6.5.(2a)",
+    "kode": "6.5.(2a).B5/20",
     "lingkup": ""
   },
   {
@@ -4184,9 +4184,9 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 6 Perkerasan Aspal",
     "kategori_3": "6.5 Campuran Beraspal Panas dengan Asbuton Butir",
-    "level_4": "Laston Lapis Antara Asbuton Butir (AC-BC Asbuton Butir) dengan Mesin Gilas Pemadatan Cerdas (IC)",
+    "level_4": "Laston Lapis Antara Asbuton Butir 5/20 (AC-BC Asbuton Butir 5/20) dengan Mesin Gilas Pemadatan Cerdas (IC)",
     "satuan": "Ton",
-    "kode": "6.5.(2b)",
+    "kode": "6.5.(2b).B5/20",
     "lingkup": ""
   },
   {
@@ -4194,9 +4194,9 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 6 Perkerasan Aspal",
     "kategori_3": "6.5 Campuran Beraspal Panas dengan Asbuton Butir",
-    "level_4": "Total Aspal Keras dan Bitumen dari Asbuton",
+    "level_4": "Total Aspal Keras dan Bitumen dari Asbuton B 5/20",
     "satuan": "kg",
-    "kode": "6.5.(3)",
+    "kode": "6.5.(3).B5/20",
     "lingkup": ""
   },
   {
@@ -4247,7 +4247,7 @@
     "level_4": "Beton struktur, fc’50 MPa",
     "satuan": "m3",
     "kode": "7.1.(1a2)",
-    "lingkup": "Pekerjaan yang diatur dalam Seksi ini harus mencakup pelaksanaan seluruh beton struktur termasuk beton kinerja tinggi, beton memadat sendiri (Self Compacting Concrete, SCC), beton massa (mass concrete), beton pratekan, beton pracetak, beton untuk struktur baja komposit, beton bertulang dan beton tak bertulang sesuai dengan Spesifikasi dan Gambar atau sebagaimana yang disetujui oleh Pengawas Pekerjaan. Mengacu ke Spesifikasi Umum 2025 Seksi 7.1"
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -4607,7 +4607,7 @@
     "level_4": "Unit Pracetak Gelagar Beton Pratekan fc’ 65 MPa, Tipe U bentang nominal 32 m, Penyediaan",
     "satuan": "Buah",
     "kode": "7.2.(1a)",
-    "lingkup": "Pekerjaan ini harus terdiri dari fabrikasi struktur gelagar beton pratekan pracetak, dengan sistem pratarik atau pasca tarik, termasuk struktur beton pracetak pratekan untuk tiang pancang, pelat lantai jembatan yang difabrikasi sesuai dengan Spesifikasi Umum 2025 mendekati garis, elevasi, dan dimensi yang ditunjukkan dalam Gambar. Pekerjaan ini harus mencakup pembuatan secara fabrikasi, pengangkutan dan penyimpanan gelagar atau balok, tiang pancang, pelat dan elemen struktur dari beton pracetak, yang dibuat dengan cara pratarik (pre tension) maupun pasca tarik (post tension). Pekerjaan ini juga termasuk pemasangan semua bagian elemen gelagar pratekan pracetak yang telah selesai dilakukan penarikan kabel baja pasca tarik. Ketentuan dari Seksi 7.1, 7.3 dan Seksi ini harus digunakan untuk pekerjaan beton pratekan cor di tempat (cast in situ) maupun pracetak (precast). Mengacu ke Spesifikasi Umum 2025 Seksi 7.2"
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -4714,6 +4714,26 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 7 Struktur",
     "kategori_3": "7.2 Beton Pratekan",
+    "level_4": "Unit Pracetak Gelagar Beton Pratekan fc’ 45 MPa, Tipe I bentang nominal 32 meter, Penyediaan",
+    "satuan": "Buah",
+    "kode": "7.2.(5c).32",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.2 Beton Pratekan",
+    "level_4": "Unit Pracetak Gelagar Beton Pratekan fc’ 45 MPa, Tipe I bentang nominal 35 meter, Penyediaan",
+    "satuan": "Buah",
+    "kode": "7.2.(5c).35",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.2 Beton Pratekan",
     "level_4": "Unit Pracetak Gelagar Beton Pratekan fc’ 45 MPa, Tipe I bentang nominal 16 m, Pemasangan",
     "satuan": "Buah",
     "kode": "7.2.(6a)",
@@ -4737,6 +4757,26 @@
     "level_4": "Unit Pracetak Gelagar Beton Pratekan fc’ 45 MPa, Tipe I bentang nominal 30 m, Pemasangan",
     "satuan": "Buah",
     "kode": "7.2.(6c).30",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.2 Beton Pratekan",
+    "level_4": "Unit Pracetak Gelagar Beton Pratekan fc’ 45 MPa, Tipe I bentang nominal 32 m, Pemasangan",
+    "satuan": "Buah",
+    "kode": "7.2.(6c).32",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.2 Beton Pratekan",
+    "level_4": "Unit Pracetak Gelagar Beton Pratekan fc’ 45 MPa, Tipe I bentang nominal 35 m, Pemasangan",
+    "satuan": "Buah",
+    "kode": "7.2.(6c).35",
     "lingkup": ""
   },
   {
@@ -4967,7 +5007,7 @@
     "level_4": "Baja Prategang",
     "satuan": "kg",
     "kode": "7.2.(27)",
-    "lingkup": "Pekerjaan ini harus mencakup pengadaan dan pemasangan baja tulangan sesuai dengan Spesifikasi dan Gambar, atau sebagaimana yang diperintahkan oleh Pengawas Pekerjaan. Mengacu ke Spesifikasi Umum 2025 Seksi 7.3"
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -5187,7 +5227,7 @@
     "level_4": "Tiang bor sekan primer diameter 80 cm (fc’ ≥ 15 MPa)",
     "satuan": "m",
     "kode": "7.5.(1)",
-    "lingkup": "Pekerjaan ini mencakup pelaksanaan Tiang Bor Primer (Beton Tanpa Tulangan) dan Tiang Bor Sekunder (Beton Dengan Tulangan). Pekerjaan ini juga dapat mencakup pemasangan balok kepala tiang pada bagian atas tiang sekan sebagai pengikat antar tiang sekan. Mengacu ke Spesifikasi Umum 2025 Seksi 7.5"
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -5267,7 +5307,7 @@
     "level_4": "Fondasi Cerucuk, Penyediaan dan Pemancangan",
     "satuan": "m",
     "kode": "7.6.(1a)",
-    "lingkup": "Pekerjaan yang diatur dalam Seksi ini harus mencakup tiang pancang, turap, dan tiang bor yang disediakan dan ditempatkan sesuai dengan Spesifikasi Umum 2025, dengan Gambar menurut penetrasi atau kedalamannya. Tiang uji dan/atau pengujian pembebanan diperlukan untuk menentukan daya dukung fondasi tiang, jumlah dan panjang tiang pancang yang akan dilaksanakan. Mengacu ke Spesifikasi Umum 2025 Seksi 7.6"
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -5444,9 +5484,29 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 7 Struktur",
     "kategori_3": "7.6 Fondasi Tiang",
+    "level_4": "Tiang Pancang Beton Bertulang Pracetak Ukuran 200 mm x 200 mm, Penyediaan",
+    "satuan": "m",
+    "kode": "7.6.(11).200.200",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.6 Fondasi Tiang",
     "level_4": "Tiang Pancang Beton Bertulang Pracetak Ukuran 400 mm x 400 mm, Penyediaan",
     "satuan": "m",
     "kode": "7.6.(11).400.400",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.6 Fondasi Tiang",
+    "level_4": "Tiang Pancang Beton Bertulang Pracetak Ukuran 200 mm x 200 mm, Pemancangan",
+    "satuan": "m",
+    "kode": "7.6.(12).200.200",
     "lingkup": ""
   },
   {
@@ -5484,6 +5544,16 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 7 Struktur",
     "kategori_3": "7.6 Fondasi Tiang",
+    "level_4": "Tiang Pancang Beton Pratekan Pracetak, Bundar Berongga, diameter 600 mm, Penyediaan",
+    "satuan": "m",
+    "kode": "7.6.(13c).600",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.6 Fondasi Tiang",
     "level_4": "Tiang Pancang Beton Pratekan Pra-cetak, Bundar Berongga, diameter 500 mm, Pemancangan",
     "satuan": "m",
     "kode": "7.6.(14a)",
@@ -5497,6 +5567,16 @@
     "level_4": "Tiang Pancang Beton Pratekan Pra-cetak, Bundar Berongga, diameter 800 mm, Pemancangan",
     "satuan": "m",
     "kode": "7.6.(14b)",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.6 Fondasi Tiang",
+    "level_4": "Tiang Pancang Beton Pratekan Pra-cetak, Bundar Berongga, diameter 600 mm, Pemancangan",
+    "satuan": "m",
+    "kode": "7.6.(14c).600",
     "lingkup": ""
   },
   {
@@ -5897,7 +5977,7 @@
     "level_4": "Sambungan Siar Muai Tipe Asphaltic Plug, Lebar 15 cm",
     "satuan": "m",
     "kode": "7.11.(1a)",
-    "lingkup": "Pekerjaan ini terdiri dari pemasokan dan pemasangan sambungan siar muai lantai yang terbuat dari logam, elastomer atau Tipe asphaltic plug, dengan gap yang bervariasi tergantung dari jenis produk yang dinyatakan dalam lembar data teknisnya dan setiap bahan pengisi (filler) dan penutup (sealer), untuk sambungan antar struktur baik dalam arah memanjang maupun melintang, sesuai dengan Gambar dan sebagaimana diperintahkan oleh Pengawas Pekerjaan. Mengacu ke Spesifikasi Umum 2025 Seksi 7.11"
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -6047,7 +6127,7 @@
     "level_4": "Landasan Logam Tipe Fixed",
     "satuan": "Buah",
     "kode": "7.12.(1a)",
-    "lingkup": "Pekerjaan ini akan terdiri dari penyediaan dan pemasangan landasan logam atau elastometrik, Lead Rubber Bearing (LRB) dengan material elastomer yang mempunyai redaman rendah atau tinggi untuk menopang gelagar atau pelat seperti yang ditunjukkan pada Gambar dan disyaratkan dalam Spesifikasi Umum 2025, termasuk jangkar penahan gempa, stopper lateral, stopper longitudinal. Mengacu ke Spesifikasi Umum 2025 Seksi 7.12"
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -6137,6 +6217,106 @@
     "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja Ukuran 450 mm x 400 mm x 73 mm",
     "satuan": "Buah",
     "kode": "7.12.(3).450.400.73",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja Ukuran 170 mm x 350mm x 35 mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).170.350.35",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja Ukuran 550 mm x 550 mm x 77 mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).550.550.77",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja Ukuran 450 mm x 600 mm x 68 mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).450.600.68",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja Ukuran 400 mm x 400 mm x 45 mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).400.400.45",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja Ukuran 300mm x 300mm x 41 mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).300.300.41",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja ukuran 350 mm x 300 mm x 100 mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).350.300.100",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja ukuran 550 mm x 550 mm x 80 mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).550.550.80",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja Ukuran 285 Mm x 280 Mm x 77 Mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).285.280.77",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja Ukuran 220 Mm x 200 Mm x 50 Mm",
+    "satuan": "Buah",
+    "kode": "7.12.(3).220.200.50",
+    "lingkup": ""
+  },
+  {
+    "source_file": "Bina Marga (BM)",
+    "kategori_1": "Bidang Bina Marga 2025",
+    "kategori_2": "Divisi 7 Struktur",
+    "kategori_3": "7.12 Landasan (Bearing)",
+    "level_4": "Landasan Elastomerik Karet Sintetis Berlapis Baja ukuran 550 mm x 400 mm x 100 mm",
+    "satuan": "Buah",
+    "kode": "7.12.(13).550.400.100",
     "lingkup": ""
   },
   {
@@ -6447,7 +6627,7 @@
     "level_4": "Pengujian Pembebanan Jembatan",
     "satuan": "Buah",
     "kode": "7.17.(1)",
-    "lingkup": "Pengujian pembebanan jembatan dilaksanakan dengan tujuan untuk: a)(cid:9)Mengetahui tingkat keselamatan, kestabilan, dan kenyamanan jembatan. b)(cid:9)Menentukan tingkat keamanan konstruksi struktur terhadap beban layan. c)(cid:9)Menentukan kondisi awal operasi penggunaan jembatan yang didasarkan dari kekakuan jembatan yang didapatkan dari nilai frekuensi dasar jembatan. Mengacu ke Spesifikasi Umum 2025 Seksi 7.17"
+    "lingkup": "Pengujian pembebanan jembatan dilaksanakan dengan tujuan untuk: a) Mengetahui (cid:415)ngkat keselamatan, kestabilan, dan kenyamanan jembatan. b) Menentukan (cid:415)ngkat keamanan konstruksi struktur terhadap beban layan. c)M enentukan kondisi awal operasi penggunaan jembatan yang didasarkan dari kekakuan jembatan yang didapatkan dari nilai frekuensi dasar jembatan. Mengacu ke Spesifikasi Umum 2025 Seksi 7.17"
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -6497,7 +6677,7 @@
     "level_4": "Cairan Perekat (Epoksi Resin)",
     "satuan": "kg",
     "kode": "8.1.(1)",
-    "lingkup": "a)(cid:9)Pekerjaan perbaikan retak ini dimaksudkan untuk mengembalikan kondisi retak struktural pada beton menjadi satu kesatuan kembali dan berfungsi sebagaimana mestinya tetapi bukan merupakan perkuatan. b)(cid:9)Perbaikan retak adalah perbaikan struktur yang retak yang diakibatkan karena retak susut, penurunan struktur, beban berlebih atau beban kejut yang berlebihan yang mengakibatkan retak lentur, tarik atau geser. c)(cid:9)Lebar retak yang terjadi pada struktur yang diperbaiki dalam Seksi ini adalah lebar retak yang melebihi lebar retak izin yaitu lebih dari 0,15 mm dan maksimum 1 mm. d)(cid:9)Perbaikan retak dalam Spesifikasi Umum 2025 tidak dapat digunakan untuk struktur beton yang telah mengalami kebocoran (atau telah terjadinya rembesan air pada celah/retak) dan celah/retak yang bergerak. Spesifikasi Umum 2025 mengacu pada Spesifikasi Umum 2025 Seksi 8.1."
+    "lingkup": "a) Pekerjaan perbaikan retak ini dimaksudkan untuk mengembalikan kondisi retak struktural pada beton menjadi satu kesatuan kembali dan berfungsi sebagaimana mestinya tetapi bukan merupakan perkuatan. b)P erbaikan retak adalah perbaikan struktur yang retak yang diakibatkan karena retak susut, penurunan struktur, beban berlebih atau beban kejut yang berlebihan yang mengakibatkan retak lentur, tarik atau geser. c)L ebar retak yang terjadi pada struktur yang diperbaiki dalam Seksi ini adalah lebar retak yang melebihi lebar retak izin yaitu lebih dari 0,15 mm dan maksimum 1 mm. d) Perbaikan retak dalam Spesifikasi Umum 2025 (cid:415)dak dapat digunakan untuk struktur beton yang telah mengalami kebocoran (atau telah terjadinya rembesan air pada celah/retak) dan celah/retak yang bergerak. Spesifikasi Umum 2025 mengacu pada Spesifikasi Umum 2025 Seksi 8.1."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -6527,7 +6707,7 @@
     "level_4": "Penambalan (Patching)",
     "satuan": "m3",
     "kode": "8.2.(1)",
-    "lingkup": "a)(cid:9)Perbaikan dimensi adalah pekerjaan pengembalian dimensi struktur beton akibat terjadinya kerontokan, pengelupasan, keropos atau gompalnya struktur beton dengan melaksanakan pekerjaan patching atau penambalan atau dengan cara grouting. Perbaikan dimensi ini dilaksanakan hanya untuk kondisi struktur yang berada di atas permukaan air (daerah kering). b)(cid:9)Patching adalah suatu pekerjaan penambalan elemen beton yang mengalami gompal atau rontok pada bagian permukaan dengan mortar baru dengan tebal maksimum 8 cm agar struktur beton dapat berfungsi sesuai dengan dimensi yang sudah ditentukan. c)(cid:9)Grouting adalah suatu perbaikan elemen beton bagian dalam dan/atau luar elemen beton dengan cara mengisi/memasukkan bahan mortar grout ke dalam rongga pada struktur beton yang keropos dengan menggunakan alat yang bertekanan tertentu (kompresor) dan menggunakan bekisting yang kedap. d)(cid:9)Mortar baru yang dilekatkan atau dimasukkan ke dalam struktur beton harus dapat melekat dengan baik dan menjadi satu kesatuan yang utuh dan dapat dipertanggungjawabkan. Mengacu pada Spesifikasi Umum 2025 Seksi 8.2."
+    "lingkup": "a) Perbaikan dimensi adalah pekerjaan pengembalian dimensi struktur beton akibat terjadinya kerontokan, pengelupasan, keropos atau gompalnya struktur beton dengan melaksanakan pekerjaan patching atau penambalan atau dengan cara grouting. Perbaikan dimensi ini dilaksanakan hanya untuk kondisi struktur yang berada di atas permukaan air (daerah kering). b)P atching adalah suatu pekerjaan penambalan elemen beton yang mengalami gompal atau rontok pada bagian permukaan dengan mortar baru dengan tebal maksimum 8 cm agar struktur beton dapat berfungsi sesuai dengan dimensi yang sudah ditentukan. c) Grou(cid:415)ng adalah suatu perbaikan elemen beton bagian dalam dan/atau luar elemen beton dengan cara mengisi/memasukkan bahan mortar grout ke dalam rongga pada struktur beton yang keropos dengan menggunakan alat yang bertekanan tertentu (kompresor) dan menggunakan bekisting yang kedap. d)M ortar baru yang dilekatkan atau dimasukkan ke dalam struktur beton harus dapat melekat dengan baik dan menjadi satu kesatuan yang utuh dan dapat dipertanggungjawabkan. Mengacu pada Spesifikasi Umum 2025 Seksi 8.2."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -6647,7 +6827,7 @@
     "level_4": "Penggantian Baut Mutu Tinggi A325 Tipe 1 Diameter M25",
     "satuan": "Buah",
     "kode": "8.5.(1a)",
-    "lingkup": "Pekerjaan ini mencakup penggantian baut mutu tinggi dan baut biasa serta pengencangan baut biasa sesuai dengan diameter dan kondisi mutu baut yang digunakan pada elemen struktur baja dan/atau elemen bagian baja dari struktur baja komposit, yang sesuai dengan kekencangan yang disyaratkan. Mengacu pada Spesifikasi Umum 2025 Seksi 8.5."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -6847,7 +7027,7 @@
     "level_4": "Pengecatan Struktur Baja pada Daerah Kering Tebal 80 mikron",
     "satuan": "m2",
     "kode": "8.7.(1a)",
-    "lingkup": "Pekerjaan ini terdiri atas persiapan permukaan dan pelapisan (coating) dengan jenis cat yang sesuai dengan kategori dan kondisi serta lingkungannya yang mempunyai tingkat proteksi pendek dan sedang. Kategori tingkat keawetan umur proteksi cat ditentukan sesuai dengan SNI ISO 12944-5-2018, yaitu keawetan pendek/rendah dengan umur proteksi rencana 2 (dua) - 5 (lima) tahun, keawetan sedang/menengah dengan umur rencana 5 (lima) - 15 (lima belas) tahun serta keawetan dengan umur Panjang/tinggi rencana lebih dari 15 (lima belas) tahun. Untuk elemen utama struktur baja minimal harus mempunyai tingkat keawetan sedang dan untuk elemen sekunder diperbolehkan mempunyai tingkat keawetan rendah. Tetapi untuk struktur baja yang merupakan satu kesatuan disyaratkan mempunyai tingkat keawetan sedang. Mengacu pada Spesifikasi Umum 2025 Seksi 8.7."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -6857,7 +7037,7 @@
     "level_4": "Pengecatan Struktur Baja pada Daerah Kering Tebal 240 mikron",
     "satuan": "m2",
     "kode": "8.7.(1b)",
-    "lingkup": ""
+    "lingkup": "mempunyai tingkat proteksi pendek dan sedang. Kategori tingkat keawetan umur proteksi cat ditentukan sesuai dengan SNI ISO 12944-5-2018, yaitu keawetan pendek/rendah dengan umur proteksi rencana 2 (dua) - 5 (lima) tahun, keawetan sedang/menengah dengan umur rencana 5 (lima) - 15 (lima belas) tahun serta keawetan dengan umur Panjang/tinggi rencana lebih dari 15 (lima belas) tahun. Untuk elemen utama struktur baja minimal harus mempunyai tingkat keawetan sedang dan untuk elemen sekunder diperbolehkan mempunyai tingkat keawetan rendah. Tetapi untuk struktur baja yang merupakan satu kesatuan disyaratkan mempunyai tingkat keawetan sedang. Mengacu pada Spesifikasi Umum 2025 Seksi 8.7."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -6997,7 +7177,7 @@
     "level_4": "Perkuatan dengan External Stressing untuk Jembatan Baja dengan Bentang 30 m",
     "satuan": "Buah",
     "kode": "8.9.(1).30",
-    "lingkup": "a)(cid:9)Pekerjaan perkuatan struktur jembatan baja adalah pekerjaan untuk mengembalikan kapasitas jembatan baja yang sudah mengalami penurunan kapasitas atau untuk meningkatkan kapasitas struktur baja. b)(cid:9)Peningkatan atau perkuatan struktur jembatan baja dalam seksi ini adalah dengan menggunakan penambahan elemen baja atau dengan menambah gaya dengan menggunakan kabel prategang. Mengacu pada Spesifikasi Umum 2025 Seksi 8.9."
+    "lingkup": "a) Pekerjaan perkuatan struktur jembatan baja adalah pekerjaan untuk mengembalikan kapasitas jembatan baja yang sudah mengalami penurunan kapasitas atau untuk meningkatkan kapasitas struktur baja. b)P eningkatan atau perkuatan struktur jembatan baja dalam seksi ini adalah dengan menggunakan penambahan elemen baja atau dengan menambah gaya dengan menggunakan kabel prategang. Mengacu pada Spesifikasi Umum 2025 Seksi 8.9."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -7197,7 +7377,7 @@
     "level_4": "Penggantian dan Perbaikan Sambungan Siar Muai Tipe Asphaltic Plug",
     "satuan": "m",
     "kode": "8.11.(1)",
-    "lingkup": "Pekerjaan ini terdiri dari perbaikan dan penggantian sambungan siar muai lama, pemasokan dan pemasangan sambungan lantai yang terbuat dari logam, karet atau tipe asphaltic plug, dan setiap bahan pengisi (filler) dan penutup (sealer) untuk sambungan antar struktur, baik dalam arah memanjang maupun melintang, sesuai dengan Gambar Kerja yang disetujui oleh Pengawas Pekerjaan. d)(cid:9)Penggantian yang dicakup dalam spesifikasi ini adalah jenis sambungan siar muai asphaltic plug, open joint, silicone seal, compression seal, strip seal, modular expansion joint, dan finger plate yang sesuai dengan lebar celah dan pergerakan struktur jembatan dengan jaminan fungsi rencana minimum 2 (dua) tahun. Mengacu pada Spesifikasi Umum 2025 Seksi 8.11."
+    "lingkup": "Pekerjaan ini terdiri dari perbaikan dan penggantian sambungan siar muai lama, pemasokan dan pemasangan sambungan lantai yang terbuat dari logam, karet atau tipe asphaltic plug, dan setiap bahan pengisi (filler) dan penutup (sealer) untuk sambungan antar struktur, baik dalam arah memanjang maupun melintang, sesuai dengan Gambar Kerja yang disetujui oleh Pengawas Pekerjaan. d) Penggan(cid:415)an yang dicakup dalam spesifikasi ini adalah jenis sambungan siar muai asphaltic plug, open joint, silicone seal, compression seal, strip seal, modular expansion joint, dan finger plate yang sesuai dengan lebar celah dan pergerakan struktur jembatan dengan jaminan fungsi rencana minimum 2 (dua) tahun. Mengacu pada Spesifikasi Umum 2025 Seksi 8.11."
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -7267,7 +7447,7 @@
     "level_4": "Penggantian Landasan Elastomer Karet Alam Berlapis Baja Ukuran 450 mm x 400 mm x 45 mm",
     "satuan": "Buah",
     "kode": "8.12.(2).450.400.45",
-    "lingkup": "Pekerjaan ini meliputi penggantian dan perbaikan landasan yang terdiri dari pengangkatan, pembongkaran, perbaikan dudukan, penyediaan, dan pemasangan landasan untuk menopang struktur bangunan atas termasuk angkur penahan gempa, stopper lateral, dan stopper longitudinal seperti yang ditunjukkan pada Gambar yang disyaratkan dalam Spesifikasi ini. Mengacu pada Spesifikasi Umum 2025 Seksi 8.12."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -7487,7 +7667,7 @@
     "level_4": "Penggantian Deck Drain",
     "satuan": "Buah",
     "kode": "8.14.(1)",
-    "lingkup": "Pekerjaan ini terdiri dari perbaikan dan penggantian pipa cucuran dan pipa penyalur beserta sambungan mekanisnya untuk jembatan. Pekerjaan lainnya seperti pengelasan, angkur dudukan, perbaikan dimensi sebagaimana yang ditunjukkan dalam Gambar yang telah disetujui oleh Pengawas Pekerjaan. Mengacu pada Spesifikasi Umum 2025 Seksi 8.14."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -7557,7 +7737,7 @@
     "level_4": "Mandor",
     "satuan": "Jam",
     "kode": "9.1.(1)",
-    "lingkup": "Pekerjaan ini mencakup kegiatan yang disetujui oleh Pengawas Pekerjaan yang semula tidak diperkirakan atau disediakan dalam Daftar Kuantitas tetapi diperlukan selama pelaksanaan pekerjaan untuk penyelesaian Pekerjaan yang memenuhi ketentuan. Kegiatan yang dilaksanakan menurut Pekerjaan Harian dapat terdiri dari pekerjaan jenis apapun sebagaimana yang ditunjukkan atau diperintahkan oleh Pengawas Pekerjaan, dan dapat mencakup pekerjaan tambahan dari drainase, galian, timbunan, stabilisasi, pengujian, pengembalian (restitution) perkerasan eksisting ke bentuk semula, pelapisan ulang, struktur atau pekerjaan lainnya. Mengacu ke Spesifikasi Umum 2025 Seksi 9.1."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -7967,7 +8147,7 @@
     "level_4": "Marka Jalan Cat (Penerapan Umum)",
     "satuan": "m2",
     "kode": "9.2.(1a)",
-    "lingkup": "Pekerjaan ini meliputi memasok, merakit dan memasang perlengkapan jalan baru atau penggantian perlengkapan jalan lama seperti marka jalan, pita penggaduh, marka kewaspadaan dengan efek kejut, rambu lalu lintas (Peringatan/Larangan/Perintah/ Petunjuk), patok pengarah, patok rumija, patok kilometer, patok hektometer, pagar pengaman semi kaku (guardrail), silinder putar (safety roller), penghalang pandangan (visual barrier), peredam suara (sound/noise barrier), terminal dengan bantalan tabrakan (crash cushion), cermin tikungan, paku jalan, patok lalu lintas, delineator, kereb beton, perkerasan bata beton, beton pemisah jalur, pagar pemisah pedestrian, pagar separator, pagar rumija, pagar kawat (chainlink fence), pintu pagar dan jalur penghentian darurat, pada lokasi yang ditunjukkan dalam Gambar atau sebagaimana yang diperintahkan oleh Pengawas Pekerjaan. Pekerjaan pemasangan perlengkapan jalan harus meliputi semua penggalian, pondasi, penimbunan kembali, penjangkaran, pemasangan, pengencangan, dan penunjangan yang diperlukan. Mengacu ke Spesifikasi Umum 2025 Seksi 9.2."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -9457,7 +9637,7 @@
     "level_4": "Perkerasan pada Trotoar dan Median Tipe Andesit Bintik Bakar, ukuran 20 cm x 20 cm tebal 3 cm",
     "satuan": "m2",
     "kode": "9.3.(1a)",
-    "lingkup": "Pekerjaan ini harus mencakup semua pekerjaan yang berkaitan dengan beautifikasi dan lansekap yang meliputi pelaksanaan seluruh pekerjaan sesuai dengan Spesifikasi ini dan sebagimana yang ditunjukkan dalam Gambar atau yang diperintahkan oleh Pengawas Pekerjaan. Pekerjaan beautifikasi ini meliputi penyediaan, perakitan, dan pemasangan perlengkapan jalan baru atau penggantian perlengkapan jalan lama (yang tidak disebutkan dalam Seksi 9.2) seperti perkerasan pada trotoar dan median (bukan bata beton), penutup lubang drainase (manhole cover), beton berpola (stamp concrete), kisi pohon (tree grate), saringan pembuangan (drain grate), tempat sampah yang digalvanisasi (galvanized), bangku/kursi, bollard pembatas pedestrian, papan lantai WPC (Wood Plastic Composite), penanda tempat dan dinding batu bata pada lokasi yang ditunjukkan dalam Gambar atau sebagaimana yang diperintahkan oleh Pengawas Pekerjaan. Lokasi pekerjaan beautifikasi seperti yang ditunjukkan dalam Gambar atau yang diperintahkan oleh Pengawas Pekerjaan. Pekerjaan lansekap dalam Seksi ini terdiri dari penyediaan dan penanaman pohon, perdu/semak, rumput (tanaman penutup) dan pengolahan tanaman pada sepanjang lengkung horizontal, sepanjang ruas jalan berlereng, pada persimpangan (bersinyal dan tidak bersinyal), bundaran, jalan simpang susun, pagar pemisah jalur dan pagar pembatas sesuai dengan ketentuan yang disyaratkan dan posisi tanaman seperti yang ditunjukkan dalam Gambar dan penyediaan atau pelaksanaan beton, batu bata atau blok kotak tanaman, dan penghalang akar tanaman (tree root barrier) di lokasi yang ditunjukkan dalam Gambar atau yang diperintahkan oleh Pengawas Pekerjaan. Penyedia Jasa harus memberikan perhatian pada langkah-langkah persiapan yang diperlukan sebelum penanaman dilakukan, seperti elevasi tanah, kemiringan tanah, dan persyaratan humus termasuk pembalikan tanah dan perataan tanah. Lokasi pekerjaan lansekap seperti yang ditunjukkan dalam Gambar atau yang diperintahkan oleh Pengawas Pekerjaan. Mengacu ke Spesifikasi Umum 2025 Seksi 9.3."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -11037,7 +11217,7 @@
     "level_4": "Penerangan Jalan Umum (PJU), Lengan Tunggal, Tinggi 7 m, LED 1 x 150 Watt, Dimming System",
     "satuan": "Buah",
     "kode": "9.4.(1a1).150",
-    "lingkup": "Pekerjaan yang diatur dalam Seksi ini harus mencakup semua pekerjaan lampu Penerangan Jalan Umum (PJU), Penerangan Jalan Umum Tenaga Surya (PJU-TS), penerangan pedestrian dan Alat Pemberi Isyarat Lalu Lintas (APILL) termasuk pekerjaan terkait kelistrikan yang meliputi penyediaan, pemasangan (perakitan) dan pengujian komisioning dari semua bahan dan peralatan dalam hubungannya dengan instalasi kelistrikan sesuai ketentuan yang disyaratkan dalam Spesifikasi dan yang ditunjukkan dalam Gambar, yang termasuk tapi tidak dibatasi oleh: a)(cid:9)Persiapan dan penyerahan Gambar Kerja ( Shop Drawing). b)(cid:9)Penyerahan tabel penyediaan bahan detail. c)(cid:9)Semua pekerjaan yang berhubungan dengan pembongkaran dari bagian dari sistem yang ada dan penggabungan bagian-bagian yang tersisa dari pekerjaan permanen. d)(cid:9)Pengukuran lapangan terhadap sinar matahari pada bagian tunnel atau underpass untuk membantu Pengawas Pekerjaan dalam mengkaji ulang terhadap detail penerangan sebagaimana yang ditunjukkan dalam Gambar. e)(cid:9)Semua peralatan listrik yang lain dan pelayanan yang diperlukan untuk menyelesaikan fasilitas operasi sesuai dengan peraturan lokal untuk Instalasi Kelistrikan termasuk semua perizinan yang diperlukan untuk layak pengoperasian dari Otoritas Kelistrikan setempat. Pekerjaan lampu penerangan jalan umum (PJU) yang diatur, kecuali disebutkan lain, mencakup pekerjaan struktur, catu daya, luminer, peralatan kontrol, dan peralatan proteksi. Pekerjaan Penerangan Jalan Umum Dengan Tenaga Surya (PJU-TS) yang diatur, kecuali disebutkan lain, mencakup panel tenaga surya (modul surya fotovoltaik), elemen optik, elemen elektrik dan struktur tiang penopang serta bangunan fondasi tiang. Sumber yang digunakan adalah catu daya listrik mandiri yang bersumber dari pemanfaatan energi surya atau sinar matahari. Pekerjaan penerangan pedestrian yang diatur, kecuali disebutkan lain, mencakup bangunan struktur, catu daya, luminer, peralatan kontrol, dan"
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -12037,7 +12217,7 @@
     "level_4": "Galian pada Saluran Air atau Lereng untuk Pemeliharaan",
     "satuan": "m3",
     "kode": "10.1.(1)",
-    "lingkup": "Pekerjaan yang tercakup dalam Seksi ini harus meliputi pekerjaan pemeliharaan jalan untuk menjamin agar perkerasan jalan, bahu jalan, sistem drainase, bangunan pelengkap jalan dan perlengkapan jalan selalu dipelihara setiap saat sejak lapangan diserahkan kepada Penyedia Jasa sampai akhir Masa Pelaksanaan dalam kondisi pelayanan yang dapat diterima oleh Pengawas Pekerjaan atau dalam kondisi yang mantap berdasarkan ketentuan kinerja yang disyaratkan dalam Pasal 10.1.4 dari Spesifikasi ini bilamana Pemeliharaan Kinerja disebutkan dalam Syarat-Syarat Khusus Kontrak (SSKK). Mengacu ke Spesifikasi Umum 2025 Seksi 10.1."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
@@ -12294,9 +12474,9 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 10 Pekerjaan Pemeliharaan",
     "kategori_3": "10.1 Pemeliharaan Jalan",
-    "level_4": "Perbaikan AC-WC Asbuton Butir",
+    "level_4": "Perbaikan AC-WC Asbuton Butir 50/30",
     "satuan": "m3",
-    "kode": "10.1.(16a)",
+    "kode": "10.1.(16a).B50/30",
     "lingkup": ""
   },
   {
@@ -12304,9 +12484,9 @@
     "kategori_1": "Bidang Bina Marga 2025",
     "kategori_2": "Divisi 10 Pekerjaan Pemeliharaan",
     "kategori_3": "10.1 Pemeliharaan Jalan",
-    "level_4": "Perbaikan AC-BC Asbuton Butir",
+    "level_4": "Perbaikan AC-BC Asbuton Butir 50/30",
     "satuan": "m3",
-    "kode": "10.1.(16b)",
+    "kode": "10.1.(16b).B50/30",
     "lingkup": ""
   },
   {
@@ -12547,7 +12727,7 @@
     "level_4": "Pembersihan Struktur Bangunan Atas Jembatan Tipe Gelagar Beton",
     "satuan": "m",
     "kode": "10.2.(1a)",
-    "lingkup": "Pekerjaan yang tercakup dalam Seksi ini meliputi pekerjaan pemeliharaan rutin dan rehabilitasi jembatan untuk mempertahankan kondisi jembatan tetap mantap dan menjamin agar penurunan kondisi jembatan dapat dikembalikan pada kondisi kemantapan sesuai ketentuan yang disyaratkan atau dalam kondisi yang mantap berdasarkan ketentuan kinerja yang disyaratkan dalam Pasal 10.2.4 dari Spesifikasi ini bilamana Pemeliharaan Kinerja disebutkan dalam Syarat-Syarat Khusus Kontrak (SSKK). Cakupan pekerjaan pemeliharaan rutin dalam Seksi ini adalah pemeliharaan rutin dalam Tabel 10.2.4.1) sedangkan pekerjaan pemeliharaan kinerja adalah pemeliharaan rutin dan pekerjaan rehabilitasi dalam Tabel 10.2.4. Mengacu pada Spesifikasi Umum 2025 Seksi 10.2."
+    "lingkup": ""
   },
   {
     "source_file": "Bina Marga (BM)",
